@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the associated manuscript and this software archive."
+type: software
+title: "Flu Paper Codes"
+authors:
+  - name: "Haque Lab, The University of Melbourne"
+repository-code: "https://github.com/HaqueLabUnimelb/Flu-Paper-Codes"
+license: MIT

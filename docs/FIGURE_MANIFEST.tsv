@@ -1,0 +1,5 @@
+figure_file	public_repository_path	source_script	source_code_section	original_output_path	file_format	file_size	sha256	figure_status	manuscript_mapping	mapping_confidence	notes
+mouse[1245]_umis.jpeg	NA	scripts/02_feature_plots/FeaturePlots_Flu.R	Spatial QC plots	Not published	JPEG	NA	NA	Expected output; not included	Unresolved	None	Four explicitly saved QC images
+mouse[1245]_{Tnf,Ifng,Il6,Ifnb1,Cxcl1,Il10,Il1b}.jpeg	NA	scripts/02_feature_plots/FeaturePlots_Flu.R	Cytokine feature plots	Not published	JPEG	NA	NA	Expected output; not included	Unresolved	None	Only explicitly saved sample-feature combinations are outputs
+mouse[1245]_{Igkc,Ighm,Ighg2c}.jpeg	NA	scripts/02_feature_plots/FeaturePlots_Flu.R	B-cell-associated feature plots	Not published	JPEG	NA	NA	Expected output; not included	Unresolved	None	Some displayed combinations were not saved in the original code
+User-configured output	NA	scripts/03_rctd/RCTD_flu_vis.R	Optional visualization export	No original file output	User selected	NA	NA	Not generated	Unresolved	None	Created only when FLU_RCTD_VIS_OUTPUT is set
