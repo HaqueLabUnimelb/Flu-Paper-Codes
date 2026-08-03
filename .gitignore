@@ -30,6 +30,8 @@ work/
 .nextflow.log*
 figures/generated/*
 !figures/generated/.gitkeep
+!figures/generated/feature_plots/
+!figures/generated/feature_plots/*.jpeg
 
 # Logs and temporary files
 logs/*

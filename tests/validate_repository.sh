@@ -43,6 +43,7 @@ required_files=(
   scripts/04_viral_mapping/lung_curioseeker_SARSCOV2genomemapping.sh
   docs/CODE_TO_FIGURE_MAP.md
   docs/FIGURE_MANIFEST.tsv
+  figures/SHA256SUMS
   environment/environment.yml
   data/README.md
 )
@@ -195,9 +196,15 @@ while IFS=$'\t' read -r figure_file public_path _rest; do
   [[ -e "${public_path}" ]] || manifest_missing+=("${public_path}")
 done < docs/FIGURE_MANIFEST.tsv
 if (( ${#manifest_missing[@]} == 0 )); then
-  record "Figure manifest paths" "PASS" "All populated public repository paths exist; non-included outputs are marked NA" "None" "None"
+  record "Figure manifest paths" "PASS" "All 42 archived figure paths exist" "None" "None"
 else
   record "Figure manifest paths" "FAIL" "Manifest paths are missing" "None" "${manifest_missing[*]}"
+fi
+
+if sha256sum -c figures/SHA256SUMS >/dev/null 2>&1; then
+  record "Figure checksums" "PASS" "All 42 archived figure checksums match figures/SHA256SUMS" "None" "None"
+else
+  record "Figure checksums" "FAIL" "At least one archived figure checksum does not match" "None" "Restore the verified figure file or checksum"
 fi
 
 if command -v python3 >/dev/null 2>&1 &&

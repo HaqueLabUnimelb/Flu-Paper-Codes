@@ -24,6 +24,8 @@ Additional repository-wide changes:
   output-directory creation where applicable.
 - Retained the original Nextflow flags, RCTD parameters, feature names, plot
   dimensions, color scales, and explicitly saved output names.
+- Archived 42 existing JPEG outputs whose names and locations match explicit
+  saves in `FeaturePlots_Flu.R`; the image bytes were not modified.
 - No random seed was added because the supplied scripts did not set one and the
   appropriate scientific choice was not established.
 

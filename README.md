@@ -8,7 +8,8 @@ This repository archives analysis scripts associated with a flu manuscript
 revision. It provides code for Curio Seeker preprocessing, spatial feature
 plots, RCTD cell-type mapping, RCTD visualization, and viral-reference mapping.
 The repository does not contain raw data, processed RDS objects, reference
-genomes, Curio Seeker itself, or generated manuscript figures.
+genomes, or Curio Seeker itself. It includes 42 recovered JPEG outputs that
+match explicit saves in the spatial feature-plot script.
 
 Full execution requires the input datasets and reference resources described in
 [Input data requirements](docs/INPUT_DATA_REQUIREMENTS.md). The scripts were
@@ -55,9 +56,9 @@ See [Analysis workflow](docs/ANALYSIS_WORKFLOW.md) for details.
 | HKx31 mapping | `scripts/04_viral_mapping/lung_curioseeker_HKx31genomemapping.sh` | Curio Seeker workflow, HKx31 samplesheet and references | Configured Nextflow output directory | No direct figure output |
 | SARS-CoV-2 mapping | `scripts/04_viral_mapping/lung_curioseeker_SARSCOV2genomemapping.sh` | Curio Seeker workflow, SARS-CoV-2 samplesheet and references | Configured Nextflow output directory | No direct figure output |
 
-The static code-to-figure record is in
-[CODE_TO_FIGURE_MAP.md](docs/CODE_TO_FIGURE_MAP.md). No manuscript figures are
-committed because their manuscript mapping was not established from the code
+[CODE_TO_FIGURE_MAP.md](docs/CODE_TO_FIGURE_MAP.md). The recovered outputs are
+archived under [figures/generated/feature_plots](figures/generated/feature_plots);
+their manuscript panel mapping remains unresolved.
 alone.
 
 ## Requirements
