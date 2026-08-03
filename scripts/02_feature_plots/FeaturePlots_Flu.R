@@ -354,13 +354,3 @@ FeaturePlot(mouse5, reduction = 'SPATIAL', features = 'Ighg2c', order=T, raster 
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
   scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes()
 ggsave(filename = "mouse5_Ighg2c.jpeg", device = "jpeg", path = feature_output_dir, width = 12, height = 12, units = "cm")
-
-
-
-
-
-
-
-
-
-
