@@ -1,0 +1,17 @@
+software_or_package	version	version_status	used_by_script	installation_method	evidence	notes
+Bash	Unknown	Inferred	all .sh	System shell	Shebang and Bash syntax	Current system version was not recorded
+SLURM	Unknown	Inferred	all .sh	Institutional scheduler	#SBATCH directives	Required only for supplied batch wrappers
+Curio Seeker	3.0.0	Inferred	preprocessing and viral mapping	External workflow	Original workflow directory name	Workflow files are not included
+Nextflow	Unknown	Not available in the current environment	preprocessing and viral mapping	External	Explicit nextflow run commands	Command was not on PATH during validation
+Singularity-compatible runtime	Unknown	Inferred	preprocessing and viral mapping	External	Nextflow profile singularity	Could be Singularity or a compatible runtime
+R	4.3.3	Confirmed	all .R	Conda	sessionInfo() from the existing RCTD environment	RCTD wrappers require R 4.3.x
+Seurat	5.1.0	Confirmed	all .R	Conda	sessionInfo() and wrapper version check	Exact RCTD version enforced
+SeuratObject	5.2.0	Confirmed	RCTD scripts	Conda	sessionInfo()	Loaded with Seurat
+spacexr	2.2.0	Confirmed	RCTD and visualization	Verified source archive	sessionInfo() and wrapper version check	Recorded source commit and SHA-256 are in README
+Matrix	1.6-5	Confirmed	RCTD scripts	Conda	sessionInfo()	Used through Matrix::colSums
+ggplot2	3.5.2	Confirmed	feature plots and RCTD visualization	Conda	sessionInfo()	Loaded through Seurat/tidyverse
+data.table	1.17.8	Confirmed	feature plots and RCTD visualization	Conda	sessionInfo()	Loaded explicitly by plotting scripts
+tidyverse	Unknown	Not available in the current environment	feature plots and RCTD visualization	Unknown	library(tidyverse) in scripts	Required runtime version unresolved
+mltools	Unknown	Not available in the current environment	feature plots and RCTD visualization	Unknown	library(mltools) in scripts	Required runtime version unresolved
+Anaconda3 module	2024.02-1	Confirmed	RCTD SLURM wrappers	HPC module	Original wrapper module load	Site-specific
+my-job-stats	Unknown	Unknown	all .sh	Optional site utility	Original scripts	Optional in public wrappers

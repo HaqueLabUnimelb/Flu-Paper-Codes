@@ -1,0 +1,46 @@
+# Local configuration and credentials
+config/paths.env
+.env
+.env.*
+*.pem
+*.key
+credentials*
+secrets*
+
+# Research data and large R objects
+data/*
+!data/README.md
+*.rds
+*.RDS
+*.RData
+*.rda
+*.h5
+*.h5ad
+*.bam
+*.bai
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+
+# Workflow outputs and caches
+outputs/
+work/
+.nextflow/
+.nextflow.log*
+figures/generated/*
+!figures/generated/.gitkeep
+
+# Logs and temporary files
+logs/*
+!logs/validation_summary.txt
+*.log
+*.tmp
+*.temp
+*~
+
+# R and editor state
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
