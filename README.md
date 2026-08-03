@@ -2,14 +2,18 @@
 
 **AI-assisted reproduction:** [Open the Codex reproduction prompt](PROMPTS/CODEX_REPRODUCTION_PROMPT.md)
 
+**Data availability:** The associated dataset has been deposited in NCBI GEO
+under Series accession [GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918).
+
 ## Overview
 
 This repository archives analysis scripts associated with a flu manuscript
 revision. It provides code for Curio Seeker preprocessing, spatial feature
 plots, RCTD cell-type mapping, RCTD visualization, and viral-reference mapping.
 The repository does not contain raw data, processed RDS objects, reference
-genomes, or Curio Seeker itself. It includes 42 recovered JPEG outputs that
-match explicit saves in the spatial feature-plot script.
+genomes, or Curio Seeker itself. It includes 44 recovered image outputs: 42
+JPEG files that match explicit saves in the spatial feature-plot script and two
+author-identified PR8 viral transcript mapping PNG files.
 
 Full execution requires the input datasets and reference resources described in
 [Input data requirements](docs/INPUT_DATA_REQUIREMENTS.md). The scripts were
@@ -53,13 +57,15 @@ See [Analysis workflow](docs/ANALYSIS_WORKFLOW.md) for details.
 | Day-4 RCTD **(300 GB HPC job)** | `scripts/03_rctd/RCTD_flu_d4_multi_spacexr2.2.R` via `mouseDay4RCTD_full_v2.sh` | PR8 reference and two edited day-4 Seurat RDS objects | `Day4mouseRCTDoutmin30_multi.rds` | No direct figure output |
 | Day-10 RCTD **(300 GB HPC job)** | `scripts/03_rctd/RCTD_flu_d10_multi_spacexr2.2.R` via `mouseDay10RCTD_full_v3.sh` | PR8 reference and two edited day-10 Seurat RDS objects | `Day10mouseRCTDoutmin30_multi.rds` | No direct figure output |
 | RCTD visualization | `scripts/03_rctd/RCTD_flu_vis.R` | Multi-replicate RCTD RDS result | Interactive plot; optional file when configured | Manuscript figure number unresolved |
+| PR8 viral transcript mapping figures | Plotting source script not supplied | Existing author-identified viral gene-expression outputs | Two archived PNG files | Manuscript figure numbers unresolved |
 | HKx31 mapping | `scripts/04_viral_mapping/lung_curioseeker_HKx31genomemapping.sh` | Curio Seeker workflow, HKx31 samplesheet and references | Configured Nextflow output directory | No direct figure output |
 | SARS-CoV-2 mapping | `scripts/04_viral_mapping/lung_curioseeker_SARSCOV2genomemapping.sh` | Curio Seeker workflow, SARS-CoV-2 samplesheet and references | Configured Nextflow output directory | No direct figure output |
 
-[CODE_TO_FIGURE_MAP.md](docs/CODE_TO_FIGURE_MAP.md). The recovered outputs are
-archived under [figures/generated/feature_plots](figures/generated/feature_plots);
+See [CODE_TO_FIGURE_MAP.md](docs/CODE_TO_FIGURE_MAP.md). The recovered outputs
+are archived under
+[figures/generated/feature_plots](figures/generated/feature_plots) and
+[figures/generated/viral_transcript_mapping](figures/generated/viral_transcript_mapping);
 their manuscript panel mapping remains unresolved.
-alone.
 
 ## Requirements
 
@@ -127,6 +133,8 @@ on a login node. More detail is available in
 - Curio Seeker and viral mapping: pipeline-specific files under the configured
   output directories.
 - Feature plotting: JPEG files under `FLU_FEATURE_PLOT_OUTPUT_DIR`.
+- Archived PR8 viral transcript mapping outputs: two PNG files under
+  `figures/generated/viral_transcript_mapping/`.
 - RCTD: one multi-replicate RDS file per time point under
   `FLU_RCTD_OUTPUT_DIR`.
 - RCTD visualization: an on-screen plot by default, or a file when
@@ -148,10 +156,11 @@ See [Reproducibility](docs/REPRODUCIBILITY.md) and the latest
 
 ## Data and code availability
 
-No raw or processed research data are distributed in this repository. Data
-availability and access conditions must be supplied by the manuscript authors;
-see [data/README.md](data/README.md). The public code is available from this
-GitHub repository under the MIT License.
+No raw or processed research data are distributed in this repository. The
+associated dataset has been deposited in NCBI GEO under Series accession
+[GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918); see
+[data/README.md](data/README.md) for local input requirements and exclusions.
+The public code is available from this GitHub repository under the MIT License.
 
 ## Citation
 

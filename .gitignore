@@ -32,6 +32,8 @@ figures/generated/*
 !figures/generated/.gitkeep
 !figures/generated/feature_plots/
 !figures/generated/feature_plots/*.jpeg
+!figures/generated/viral_transcript_mapping/
+!figures/generated/viral_transcript_mapping/*.png
 
 # Logs and temporary files
 logs/*

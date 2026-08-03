@@ -108,13 +108,14 @@ if [[ -z "${rscript_path}" ]] && command -v Rscript >/dev/null 2>&1; then
   rscript_path=$(command -v Rscript)
 fi
 if [[ -n "${rscript_path}" && -x "${rscript_path}" ]]; then
+  r_version=$("${rscript_path}" --version 2>&1 | head -n 1)
   r_failures=()
   while IFS= read -r -d '' r_file; do
     "${rscript_path}" --vanilla -e 'parse(file=commandArgs(TRUE)[1])' "${r_file}" >/dev/null ||
       r_failures+=("${r_file}")
   done < <(find scripts -name '*.R' -type f -print0)
   if (( ${#r_failures[@]} == 0 )); then
-    record "R syntax" "PASS" "All public R scripts parsed with ${rscript_path}" "None" "None"
+    record "R syntax" "PASS" "All public R scripts parsed with ${r_version}" "None" "None"
   else
     record "R syntax" "FAIL" "${#r_failures[@]} R file(s) failed to parse" "None" "${r_failures[*]}"
   fi
@@ -196,13 +197,13 @@ while IFS=$'\t' read -r figure_file public_path _rest; do
   [[ -e "${public_path}" ]] || manifest_missing+=("${public_path}")
 done < docs/FIGURE_MANIFEST.tsv
 if (( ${#manifest_missing[@]} == 0 )); then
-  record "Figure manifest paths" "PASS" "All 42 archived figure paths exist" "None" "None"
+  record "Figure manifest paths" "PASS" "All 44 archived figure paths exist" "None" "None"
 else
   record "Figure manifest paths" "FAIL" "Manifest paths are missing" "None" "${manifest_missing[*]}"
 fi
 
 if sha256sum -c figures/SHA256SUMS >/dev/null 2>&1; then
-  record "Figure checksums" "PASS" "All 42 archived figure checksums match figures/SHA256SUMS" "None" "None"
+  record "Figure checksums" "PASS" "All 44 archived figure checksums match figures/SHA256SUMS" "None" "None"
 else
   record "Figure checksums" "FAIL" "At least one archived figure checksum does not match" "None" "Restore the verified figure file or checksum"
 fi

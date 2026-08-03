@@ -32,8 +32,8 @@
 - Exact historical versions of all Curio Seeker and plotting dependencies are
   unavailable.
 - The authoritative spacexr source-archive location is unresolved.
-- Manuscript title, citation, data accessions, and figure panel mapping require
-  author confirmation.
+- Manuscript title, citation, mapping between the GEO deposit and required local
+  inputs, and figure panel mapping require author confirmation.
 
 Exact reproduction may depend on unavailable inputs, reference resources,
 containers, and historical software versions.

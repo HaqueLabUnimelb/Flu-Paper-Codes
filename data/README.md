@@ -18,8 +18,9 @@ The RCTD reference is expected to contain `timepoint_ref` and
 `Annotation_relabel` metadata. These requirements are inferred directly from
 the code; the repository does not validate or redistribute the objects.
 
-Public accession identifiers and controlled-access conditions were not
-available during repository preparation. The manuscript authors must add the
-confirmed data-availability statement. Raw FASTQ files, alignment files,
-reference genomes, Seurat/RCTD objects, pipeline work directories, and
-credentials are intentionally excluded from GitHub.
+The associated dataset has been deposited in NCBI GEO under Series accession
+[GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918).
+Users should confirm which required repository inputs are represented in that
+deposit and whether the record has been publicly released. Raw FASTQ files,
+alignment files, reference genomes, Seurat/RCTD objects, pipeline work
+directories, and credentials are intentionally excluded from GitHub.

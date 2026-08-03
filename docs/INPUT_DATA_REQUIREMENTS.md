@@ -48,5 +48,8 @@ paths recorded in the supplied scripts, although existing day-4 and day-10 RCTD
 result objects were found. The viral-mapping samplesheets recorded by the
 scripts were not found.
 
-Public accession identifiers and access conditions remain unresolved and
-require author confirmation. No data files are committed to GitHub.
+The associated dataset has been deposited in NCBI GEO under Series accession
+[GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918).
+Users should confirm which required local inputs are represented in the deposit
+and whether the record has been publicly released. No data files are committed
+to GitHub.

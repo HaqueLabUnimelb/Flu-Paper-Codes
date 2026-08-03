@@ -4,7 +4,7 @@ README prompt placement	PASS	Prompt link is the first content after the title	No
 Internal Markdown links	PASS	All relative Markdown links resolve	None	None
 Configuration syntax	PASS	config/paths.example.env passes bash -n	None	None
 Shell syntax	PASS	All public Shell scripts pass bash -n	None	None
-R syntax	PASS	All public R scripts parsed with R 4.3.3	None	None
+R syntax	PASS	All public R scripts parsed with Rscript (R) version 4.3.3 (2024-02-29)	None	None
 ShellCheck	NOT TESTED	shellcheck is not installed	None	Install shellcheck in an authorized environment to test
 Credential patterns	PASS	No obvious credential or private-key pattern was found	None	None
 Raw-data files	PASS	No excluded research-data extension is present	None	None
@@ -13,11 +13,11 @@ Institutional paths and identities	PASS	No blocked internal path, allocation, or
 English public text	PASS	No Han-script character was found in public text/code	None	This is a character-level check, not editorial certification
 Executable permissions	PASS	All Shell and R scripts are user-executable	None	None
 .gitignore coverage	PASS	Required data, output, log, temporary, R-state, and credential patterns are excluded	None	None
-Figure manifest paths	PASS	All 42 archived figure paths exist	None	None
-Figure checksums	PASS	All 42 archived figure checksums match figures/SHA256SUMS	None	None
-Figure format and dimensions	PASS	All 42 files are 1417x1417 baseline JPEG images	None	None
+Figure manifest paths	PASS	All 44 archived figure paths exist	None	None
+Figure checksums	PASS	All 44 archived figure checksums match figures/SHA256SUMS	None	None
 YAML syntax	PASS	environment.yml and CITATION.cff parse with PyYAML	None	None
-Overall validation	PASS	No failed checks; 0 warning checks	None	Review NOT TESTED rows
+Overall validation	PASS	No failed checks; 0 warning check(s)	None	Review NOT TESTED and WARNING rows
+Figure format and dimensions	PASS	42 files are 1417x1417 baseline JPEG images; 2 files are 2400x2100 RGB PNG images	None	None
 
 Validation date: 2026-08-03
 Full analyses were not run. The R scripts were parsed only; no RDS object was opened.
