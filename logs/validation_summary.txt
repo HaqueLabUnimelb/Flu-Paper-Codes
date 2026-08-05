@@ -1,5 +1,5 @@
 check	status	evidence	action_taken	remaining_issue
-Required repository files	PASS	All 20 required files exist	None	None
+Required repository files	PASS	All 32 required files exist	None	None
 README prompt placement	PASS	Prompt link is the first content after the title	None	None
 Internal Markdown links	PASS	All relative Markdown links resolve	None	None
 Configuration syntax	PASS	config/paths.example.env passes bash -n	None	None
@@ -17,7 +17,3 @@ Figure manifest paths	PASS	All 44 archived figure paths exist	None	None
 Figure checksums	PASS	All 44 archived figure checksums match figures/SHA256SUMS	None	None
 YAML syntax	PASS	environment.yml and CITATION.cff parse with PyYAML	None	None
 Overall validation	PASS	No failed checks; 0 warning check(s)	None	Review NOT TESTED and WARNING rows
-Figure format and dimensions	PASS	42 files are 1417x1417 baseline JPEG images; 2 files are 2400x2100 RGB PNG images	None	None
-
-Validation date: 2026-08-03
-Full analyses were not run. The R scripts were parsed only; no RDS object was opened.

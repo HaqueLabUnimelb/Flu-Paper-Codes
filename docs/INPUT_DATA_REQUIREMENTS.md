@@ -26,6 +26,27 @@ biological review of the objects.
 
 The reference object is not included.
 
+## Revision-analysis inputs
+
+The Fisher overlap script expects three text files:
+
+- a background universe containing every gene that could have been selected;
+- gene list 1;
+- gene list 2.
+
+The first column is read without a header. Identifiers are trimmed and
+deduplicated. Every gene in either tested list must occur in the universe.
+
+The primary RCTD revision workflow expects the day-4 full-mode
+`RCTD.replicates` object produced by `scripts/03_rctd/`. The doublet rerun
+creates a second object from those same fitted inputs. The comparison script
+requires both objects and assumes identical replicate and spot ordering.
+
+The optional legacy comparison additionally requires an older day-4
+doublet-mode object. That object was generated from a non-identical spot set or
+preprocessing path and is not included. The legacy workflow is provided for
+provenance, not as the preferred mode-sensitivity analysis.
+
 ## Curio Seeker inputs
 
 Preprocessing and viral mapping require:

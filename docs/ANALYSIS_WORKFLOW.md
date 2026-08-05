@@ -43,4 +43,32 @@ workflow with reference-specific samplesheets. These workflows are independent
 of RCTD and can be submitted when their samplesheets and references are
 available.
 
+## 6. Revision analyses
+
+`scripts/05_revision_analyses/FishersExactTest.R` tests whether two gene
+lists overlap more than expected by chance within a supplied background gene
+universe. It uses a one-sided Fisher's exact test, treats the inputs as sets,
+and rejects tested genes outside the universe.
+
+The day-4 RCTD mode-sensitivity workflow starts from the archived full-mode
+`RCTD.replicates` object. `run_same_input_doublet.R` reruns that object with
+`doublet_mode = "doublet"`, preserving the fitted inputs, spots and
+reference-derived profiles. `compare_full_vs_doublet.R` then calculates:
+
+- spot-class frequencies;
+- top-one and top-two cell-type concordance;
+- full-mode mass assigned to the two highest-weight cell types;
+- per-cell-type Pearson and Spearman correlations;
+- mean absolute and root mean square differences;
+- per-spot total variation and Jensen-Shannon divergence;
+- mean cell-type compositions and reviewer-facing plots.
+
+`plot_individual_cell_types.R` independently renders every normalized
+cell-type proportion for both day-4 replicates.
+
+The legacy shared-spot paired t-test is retained for provenance but compares
+objects that were not generated from identical inputs. Spatial spots are also
+autocorrelated. Its p-values are therefore not treated as primary evidence;
+the same-input descriptive comparison is preferred.
+
 No full workflow was rerun during repository preparation.

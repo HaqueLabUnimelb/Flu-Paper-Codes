@@ -15,6 +15,10 @@ sample grouping, RCTD mode, or plotting scale was intentionally changed.
 | Day-4 RCTD Shell wrapper | Used an institutional account, log path, project path, and environment path | Resolves the repository location, reads configuration, uses a relative log path, and allows environment/module overrides | Public HPC portability | Portability |
 | Day-10 RCTD Shell wrapper | Used an institutional account, log path, project path, and environment path | Resolves the repository location, reads configuration, uses a relative log path, and allows environment/module overrides | Public HPC portability | Portability |
 | `RCTD_flu_vis.R` | Read four results consecutively, so only the final day-10 full-mode assignment was effective; displayed but did not save the plot | Reads one configurable result, defaults to the same effective day-10 output, prints the plot, and optionally saves when explicitly requested | Clarify effective input and enable controlled output | Portability/validation |
+| `FishersExactTest.R` | Used three absolute paths, counted list lengths without deduplication or universe validation, and printed an unnamed test object | Accepts command-line or environment paths, treats inputs as sets, validates universe membership, labels the contingency table, and optionally writes a TSV summary | Reproducibility and valid set-size accounting | Portability/validation |
+| Revision RCTD R scripts | Used institutional project paths and fixed output directories | Use configurable paths with repository-relative defaults and validate required objects and replicate labels | Public portability and informative failure | Portability/validation |
+| Revision RCTD Shell wrappers | Used an institutional account, absolute logs, project path and environment path | Resolve the repository, load optional public configuration, use relative logs and omit allocation identity | Public HPC portability | Portability |
+| Legacy shared-spot comparison | Existing warning was written only into generated output | Adds an adjacent public README and script header that identify non-identical inputs and spatial-inference limitations | Prevent misinterpretation | Documentation |
 
 Additional repository-wide changes:
 
@@ -28,6 +32,8 @@ Additional repository-wide changes:
   saves in `FeaturePlots_Flu.R`; the image bytes were not modified.
 - No random seed was added because the supplied scripts did not set one and the
   appropriate scientific choice was not established.
+- Added a separately documented revision module; no RDS, generated CSV, plot,
+  log, Conda cache or installed environment from the working directory was copied.
 
 The optional RCTD visualization export is operationally new but is disabled by
 default. It does not change the plotted data or aesthetics.

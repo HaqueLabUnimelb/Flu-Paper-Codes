@@ -41,6 +41,18 @@ required_files=(
   scripts/03_rctd/RCTD_flu_vis.R
   scripts/04_viral_mapping/lung_curioseeker_HKx31genomemapping.sh
   scripts/04_viral_mapping/lung_curioseeker_SARSCOV2genomemapping.sh
+  scripts/05_revision_analyses/README.md
+  scripts/05_revision_analyses/FishersExactTest.R
+  scripts/05_revision_analyses/rctd/README.md
+  scripts/05_revision_analyses/rctd/plot_individual_cell_types.R
+  scripts/05_revision_analyses/rctd/plot_individual_cell_types.sh
+  scripts/05_revision_analyses/rctd/run_same_input_doublet.R
+  scripts/05_revision_analyses/rctd/run_same_input_doublet.sh
+  scripts/05_revision_analyses/rctd/compare_full_vs_doublet.R
+  scripts/05_revision_analyses/rctd/compare_full_vs_doublet.sh
+  scripts/05_revision_analyses/rctd/legacy/README.md
+  scripts/05_revision_analyses/rctd/legacy/legacy_shared_spot_paired_ttest.R
+  scripts/05_revision_analyses/rctd/legacy/legacy_shared_spot_paired_ttest.sh
   docs/CODE_TO_FIGURE_MAP.md
   docs/FIGURE_MANIFEST.tsv
   figures/SHA256SUMS

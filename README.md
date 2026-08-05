@@ -10,8 +10,11 @@ under Series accession [GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cg
 This repository archives analysis scripts associated with a flu manuscript
 revision. It provides code for Curio Seeker preprocessing, spatial feature
 plots, RCTD cell-type mapping, RCTD visualization, and viral-reference mapping.
-The repository does not contain raw data, processed RDS objects, reference
-genomes, or Curio Seeker itself. It includes 44 recovered image outputs: 42
+It also contains a revision-analysis module for gene-list overlap testing,
+individual RCTD cell-type maps, and a same-input comparison of full versus
+doublet RCTD modes. The repository does not contain raw data, processed RDS
+objects, reference genomes, or Curio Seeker itself. It includes 44 recovered
+image outputs: 42
 JPEG files that match explicit saves in the spatial feature-plot script and two
 author-identified PR8 viral transcript mapping PNG files.
 
@@ -30,6 +33,7 @@ reproduction guidance, not as a fully self-contained reproducibility package.
 4. Inspect an RCTD result with the visualization script.
 5. Run HKx31 or SARS-CoV-2 reference mapping when the corresponding
    samplesheets and references are available.
+6. Run reviewer-specific gene-overlap and RCTD mode-sensitivity analyses.
 
 See [Analysis workflow](docs/ANALYSIS_WORKFLOW.md) for details.
 
@@ -41,6 +45,7 @@ See [Analysis workflow](docs/ANALYSIS_WORKFLOW.md) for details.
 | `scripts/02_feature_plots/` | Spatial feature-plot R script |
 | `scripts/03_rctd/` | Day-4/day-10 RCTD scripts and visualization |
 | `scripts/04_viral_mapping/` | HKx31 and SARS-CoV-2 mapping scripts |
+| `scripts/05_revision_analyses/` | Gene-list overlap and RCTD reviewer follow-up analyses |
 | `config/` | Example path and sample configuration |
 | `environment/` | Confirmed and inferred dependency information |
 | `docs/` | Workflow, provenance, changes, and troubleshooting |
@@ -57,6 +62,8 @@ See [Analysis workflow](docs/ANALYSIS_WORKFLOW.md) for details.
 | Day-4 RCTD **(300 GB HPC job)** | `scripts/03_rctd/RCTD_flu_d4_multi_spacexr2.2.R` via `mouseDay4RCTD_full_v2.sh` | PR8 reference and two edited day-4 Seurat RDS objects | `Day4mouseRCTDoutmin30_multi.rds` | No direct figure output |
 | Day-10 RCTD **(300 GB HPC job)** | `scripts/03_rctd/RCTD_flu_d10_multi_spacexr2.2.R` via `mouseDay10RCTD_full_v3.sh` | PR8 reference and two edited day-10 Seurat RDS objects | `Day10mouseRCTDoutmin30_multi.rds` | No direct figure output |
 | RCTD visualization | `scripts/03_rctd/RCTD_flu_vis.R` | Multi-replicate RCTD RDS result | Interactive plot; optional file when configured | Manuscript figure number unresolved |
+| Gene-list overlap | `scripts/05_revision_analyses/FishersExactTest.R` | Background universe and two gene lists | Fisher test TSV summary | Reviewer follow-up; panel mapping unresolved |
+| Day-4 RCTD mode sensitivity | `scripts/05_revision_analyses/rctd/run_same_input_doublet.R` and `compare_full_vs_doublet.R` | Day-4 full-mode RCTD object | Same-input doublet RDS, comparison tables and plots | Reviewer follow-up; panel mapping unresolved |
 | PR8 viral transcript mapping figures | Plotting source script not supplied | Existing author-identified viral gene-expression outputs | Two archived PNG files | Manuscript figure numbers unresolved |
 | HKx31 mapping | `scripts/04_viral_mapping/lung_curioseeker_HKx31genomemapping.sh` | Curio Seeker workflow, HKx31 samplesheet and references | Configured Nextflow output directory | No direct figure output |
 | SARS-CoV-2 mapping | `scripts/04_viral_mapping/lung_curioseeker_SARSCOV2genomemapping.sh` | Curio Seeker workflow, SARS-CoV-2 samplesheet and references | Configured Nextflow output directory | No direct figure output |
@@ -119,6 +126,12 @@ sbatch --account=YOUR_ACCOUNT --partition=long \
 sbatch --account=YOUR_ACCOUNT --partition=long \
   scripts/03_rctd/mouseDay10RCTD_full_v3.sh
 
+Rscript --vanilla scripts/05_revision_analyses/FishersExactTest.R \
+  /path/to/background_genes.txt /path/to/list_1.txt /path/to/list_2.txt \
+  outputs/revision/fisher_gene_overlap.tsv
+sbatch --account=YOUR_ACCOUNT \
+  scripts/05_revision_analyses/rctd/run_same_input_doublet.sh
+
 Rscript --vanilla scripts/02_feature_plots/FeaturePlots_Flu.R
 Rscript --vanilla scripts/03_rctd/RCTD_flu_vis.R
 ```
@@ -139,6 +152,9 @@ on a login node. More detail is available in
   `FLU_RCTD_OUTPUT_DIR`.
 - RCTD visualization: an on-screen plot by default, or a file when
   `FLU_RCTD_VIS_OUTPUT` is set.
+- Revision analyses: a Fisher-test TSV, individual RCTD cell-type maps, and
+  same-input full-versus-doublet comparison tables and figures under the
+  configured revision output paths.
 
 ## Validation and limitations
 

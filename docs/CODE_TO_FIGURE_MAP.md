@@ -11,6 +11,9 @@ transcript PNG files whose plotting source script was not supplied.
 | `FeaturePlots_Flu.R`: cytokine feature plots | Explicitly saved `mouse*_GENE.jpeg` cytokine plots | 27 files included under `figures/generated/feature_plots/` | Unresolved |
 | `FeaturePlots_Flu.R`: B-cell-associated features | Explicitly saved `Igkc`, `Ighm`, and selected `Ighg2c` plots | 11 files included under `figures/generated/feature_plots/` | Unresolved |
 | `RCTD_flu_vis.R`: cell-type overlay | Interactive plot; optional configured output | No existing, explicitly attributable file was found | Unresolved |
+| Revision RCTD individual cell-type plots | One PNG per cell type and day-4 replicate plus a CSV summary | Code included; generated outputs not archived | Reviewer follow-up; mapping unresolved |
+| Revision RCTD same-input mode comparison | Six PNG summaries, CSV metrics and `reviewer_summary.md` | Code included; generated outputs not archived | Reviewer follow-up; mapping unresolved |
+| Revision Fisher gene-list overlap | TSV statistics only; no direct figure | Code included; result not archived | No direct figure output |
 | Plotting source script not supplied: PR8 viral transcript mapping | `PR8_viral_gene_expression_2_2.png` and `PR8_viral_gene_expression_2_3.png` | 2 author-identified files included under `figures/generated/viral_transcript_mapping/` | Unresolved |
 
 Curio Seeker, RCTD model-fitting, and viral-mapping launchers do not directly
