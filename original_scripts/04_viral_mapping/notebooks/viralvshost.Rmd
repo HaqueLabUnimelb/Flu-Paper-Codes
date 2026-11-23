@@ -1,0 +1,355 @@
+---
+title: "Viral nfeature ncounts"
+output: html_document
+date: "2025-12-15"
+---
+
+```{r}
+slice22 <- readRDS("/data/projects/punim2394/lung_curio_mouse_pr8/RCTD/day4/lungST_2_2_QCed_annotatedv1.rds") 
+slice23 <- readRDS("/data/projects/punim2394/lung_curio_mouse_pr8/processed_data/annotated_lungST_2_3_QCed.rds") 
+slice42 <- readRDS("/data/projects/punim2394/lung_curio_mouse_pr8/processed_data/annotated_lungST_4_2_QCed.rds") 
+slice43 <- readRDS("/data/projects/punim2394/lung_curio_mouse_pr8/processed_data/annotated_lungST_4_3_QCed.rds") 
+# Load required libraries 
+library(ggplot2) 
+library(dplyr)
+```
+
+```{r}
+suppressPackageStartupMessages({
+  library(Seurat)
+  library(Matrix)
+  library(ggplot2)
+  library(dplyr)
+})
+
+# ---------------------------
+# Function: add host/viral QC
+# ---------------------------
+add_host_viral_qc <- function(obj,
+                             assay = "RNA",
+                             layer = "counts",
+                             viral_features = c("HA","NP","NA","PB1","PB2","PA","NEP","NS1","M1","M2"),
+                             na_alias = c("NA","neuraminidase")) {
+
+  # Seurat v5-safe counts fetch
+  counts <- tryCatch(
+    GetAssayData(obj, assay = assay, layer = layer),
+    error = function(e) GetAssayData(obj, assay = assay, slot = "counts")
+  )
+
+  feats <- rownames(counts)
+
+  # Map neuraminidase alias: treat either "NA" or "neuraminidase" as viral
+  viral_set <- unique(c(setdiff(viral_features, "NA"), na_alias))
+  viral_present <- intersect(feats, viral_set)
+
+  if (length(viral_present) == 0) {
+    stop("No viral features found in this object. Check rownames(obj[['RNA']]) and your viral_features/aliases.")
+  }
+
+  host_present <- setdiff(feats, viral_present)
+
+  # nCount: sum of UMIs
+  obj$nCount_viral <- Matrix::colSums(counts[viral_present, , drop = FALSE])
+  obj$nCount_host  <- Matrix::colSums(counts[host_present,  , drop = FALSE])
+
+  # nFeature: number of detected genes (nonzero)
+  obj$nFeature_viral <- Matrix::colSums(counts[viral_present, , drop = FALSE] > 0)
+  obj$nFeature_host  <- Matrix::colSums(counts[host_present,  , drop = FALSE] > 0)
+
+  # Optional sanity check totals (won't overwrite your existing nCount_RNA/nFeature_RNA)
+  obj$nCount_host_plus_viral <- obj$nCount_host + obj$nCount_viral
+  obj$nFeature_host_plus_viral <- obj$nFeature_host + obj$nFeature_viral
+
+  return(obj)
+}
+
+# ---------------------------
+# Apply to your 4 slices
+# ---------------------------
+viral_genes <- c("HA","NP","NA","PB1","PB2","PA","NEP","NS1","M1","M2")
+
+slice22 <- add_host_viral_qc(slice22, viral_features = viral_genes)
+slice23 <- add_host_viral_qc(slice23, viral_features = viral_genes)
+slice42 <- add_host_viral_qc(slice42, viral_features = viral_genes)
+slice43 <- add_host_viral_qc(slice43, viral_features = viral_genes)
+
+df <- merge(slice22, slice23)
+df <- merge(df, slice42)
+df <- merge(df, slice43)
+
+# ---------------------------
+# Example plots (slice22)
+# ---------------------------
+p1 <- VlnPlot(df, feature = "nCount_host", pt.size = 0, group.by = 'orig.ident') +
+  scale_y_log10(breaks = c(10, 100, 1000, 10000)) 
+p2 <- VlnPlot(df, feature = "nCount_viral", pt.size = 0, group.by = 'orig.ident') +
+  scale_y_log10(breaks = c(10, 100, 1000, 10000)) 
+p3 <- VlnPlot(df, feature = "nFeature_host", pt.size = 0, group.by = 'orig.ident') +
+  scale_y_log10(breaks = c(10, 100, 1000, 10000)) 
+p4 <- VlnPlot(df, feature = "nFeature_viral", pt.size = 0, group.by = 'orig.ident') +
+  scale_y_log10(breaks = c(10, 100, 1000, 10000)) 
+df_vpos <- subset(df, subset = nCount_viral > 0)
+
+p2 <- VlnPlot(df_vpos, features = "nCount_viral", pt.size = 0, group.by = "orig.ident") +
+  scale_y_log10(breaks = c(10, 100, 1000, 10000))
+p4 <- VlnPlot(df, feature = "nFeature_viral", pt.size = 0, group.by = 'orig.ident') +
+  scale_y_log10(breaks = c(10, 100, 1000, 10000)) 
+p1; p2; p3; p4
+
+# Violin by your annotation column (slice22)
+annot_col <- "first_type"
+VlnPlot(slice22, features = c("nCount_host","nCount_viral","nFeature_host","nFeature_viral"),
+        group.by = annot_col, pt.size = 0) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+***CHEN***
+```{r}
+#compare datasets
+suppressPackageStartupMessages({
+  library(Seurat)
+  library(Matrix)
+  library(dplyr)
+  library(ggplot2)
+})
+bin_to_grid55 <- function(sp,
+                          sample_name,
+                          scale_xy = 0.647,
+                          width = 55,
+                          assay = "RNA",
+                          layer = "counts",
+                          min_nCount = 10) {
+
+  # scale coords
+  sp@reductions[["SPATIAL"]]@cell.embeddings <- sp@reductions[["SPATIAL"]]@cell.embeddings * scale_xy
+
+  # filter spots
+  sp <- subset(sp, subset = nCount_RNA > min_nCount)
+
+  # coords
+  coords <- as.data.frame(sp@reductions$SPATIAL@cell.embeddings)
+  colnames(coords) <- c("x", "y")
+  coords$cell <- rownames(coords)
+
+  # bin (CENTERED at 0; no boundary)
+  coords <- coords %>%
+    mutate(
+      xbin = ggplot2::cut_width(x, width = width, center = 0, label = FALSE),
+      ybin = ggplot2::cut_width(y, width = width, center = 0, label = FALSE)
+    )
+
+  coords$bin_id <- paste(coords$xbin, coords$ybin, sep = "_")
+
+  # counts (Seurat v5 safe)
+  counts <- tryCatch(
+    GetAssayData(sp, assay = assay, layer = layer),
+    error = function(e) GetAssayData(sp, assay = assay, slot = "counts")
+  )
+
+  # map each cell -> bin index
+  bin_levels <- unique(coords$bin_id)
+  bin_index  <- match(coords$bin_id, bin_levels)
+
+  # assignment matrix (cells x bins)
+  A <- Matrix::sparseMatrix(
+    i = seq_len(nrow(coords)),
+    j = bin_index,
+    x = 1,
+    dims = c(nrow(coords), length(bin_levels))
+  )
+
+  # genes x bins
+  binned_counts <- counts[, coords$cell, drop = FALSE] %*% A
+  colnames(binned_counts) <- bin_levels
+
+  # bin coordinates (numeric)
+  bin_xy <- coords %>%
+    distinct(bin_id, xbin, ybin) %>%
+    mutate(
+      x = as.numeric(as.character(xbin)) * width,
+      y = as.numeric(as.character(ybin)) * width
+    )
+
+  # total UMIs per bin
+  total_umis <- Matrix::colSums(binned_counts)
+  df <- bin_xy
+  df$total_counts <- as.numeric(total_umis[match(df$bin_id, names(total_umis))])
+  df$sample <- sample_name
+
+  df
+}
+bin_to_grid55_host <- function(sp,
+                               sample_name,
+                               scale_xy = 0.647,
+                               width = 55,
+                               assay = "RNA",
+                               layer = "counts",
+                               min_nCount = 10,
+                               viral_features = c("HA","NP","NA","neuraminidase","PB1","PB2","PA","NEP","NS1","M1","M2")) {
+
+  # scale coords
+  sp@reductions[["SPATIAL"]]@cell.embeddings <- sp@reductions[["SPATIAL"]]@cell.embeddings * scale_xy
+
+  # filter spots
+  sp <- subset(sp, subset = nCount_RNA > min_nCount)
+
+  # coords
+  coords <- as.data.frame(sp@reductions$SPATIAL@cell.embeddings)
+  colnames(coords) <- c("x", "y")
+  coords$cell <- rownames(coords)
+
+  # bin (centered at 0)
+  coords <- coords %>%
+    mutate(
+      xbin = ggplot2::cut_width(x, width = width, center = 0, label = FALSE),
+      ybin = ggplot2::cut_width(y, width = width, center = 0, label = FALSE)
+    )
+
+  coords$bin_id <- paste(coords$xbin, coords$ybin, sep = "_")
+
+  # counts (Seurat v5 safe)
+  counts <- tryCatch(
+    GetAssayData(sp, assay = assay, layer = layer),
+    error = function(e) GetAssayData(sp, assay = assay, slot = "counts")
+  )
+
+  feats <- rownames(counts)
+
+  # viral present in matrix (handle NA alias)
+  viral_present <- intersect(feats, unique(viral_features))
+  host_present  <- setdiff(feats, viral_present)
+
+  # map cells -> bins
+  bin_levels <- unique(coords$bin_id)
+  bin_index  <- match(coords$bin_id, bin_levels)
+
+  A <- Matrix::sparseMatrix(
+    i = seq_len(nrow(coords)),
+    j = bin_index,
+    x = 1,
+    dims = c(nrow(coords), length(bin_levels))
+  )
+
+  # genes x bins
+  binned_counts <- counts[, coords$cell, drop = FALSE] %*% A
+  colnames(binned_counts) <- bin_levels
+
+  # bin coordinates (numeric)
+  bin_xy <- coords %>%
+    distinct(bin_id, xbin, ybin) %>%
+    mutate(
+      x = as.numeric(as.character(xbin)) * width,
+      y = as.numeric(as.character(ybin)) * width
+    )
+
+  # host-only UMIs per bin
+  host_umis <- Matrix::colSums(binned_counts[host_present, , drop = FALSE])
+
+  # optional viral UMIs per bin (useful sanity check)
+  viral_umis <- if (length(viral_present) > 0) {
+    Matrix::colSums(binned_counts[viral_present, , drop = FALSE])
+  } else {
+    rep(0, ncol(binned_counts))
+  }
+  names(viral_umis) <- colnames(binned_counts)
+
+  df <- bin_xy
+  df$total_counts_host <- as.numeric(host_umis[match(df$bin_id, names(host_umis))])
+  df$total_counts_viral <- as.numeric(viral_umis[match(df$bin_id, names(viral_umis))])
+  df$sample <- sample_name
+
+  df
+}
+
+```
+
+```{r}
+object_paths <- c(
+  "/data/projects/punim2394/lung_curio_mouse_pr8/RCTD/day4/lungST_2_2_QCed_annotatedv1.rds",
+  "/data/projects/punim2394/lung_curio_mouse_pr8/processed_data/annotated_lungST_2_3_QCed.rds"
+)
+
+sp1 <- readRDS(object_paths[1])
+sp2 <- readRDS(object_paths[2])
+
+df_day4rep1 <- bin_to_grid55(sp1, sample_name = "Day4Rep1", width = 55, scale_xy = 0.647)
+df_day4rep2 <- bin_to_grid55(sp2, sample_name = "Day4Rep2", width = 55, scale_xy = 0.647)
+
+df_combined <- bind_rows(df_day4rep1, df_day4rep2)
+library(Seurat)
+
+data.dir <- "/data/projects/punim2394/lung_visium_pub/day3"
+image.dir <- normalizePath(data.dir, winslash = "/")
+
+image <- Read10X_Image(image.dir, image.name = "tissue_lowres_image.png")
+d3 <- Load10X_Spatial(data.dir = data.dir, image = image)
+
+coords3 <- Seurat::GetTissueCoordinates(d3, image = names(d3@images)[1])
+
+df_d3 <- data.frame(
+  x = coords3$x,
+  y = coords3$y,
+  total_counts = d3$nCount_Spatial,   # UMIs
+  sample = "GSE202322"
+)
+
+df_all <- bind_rows(df_combined, df_d3) %>%
+  mutate(sample = factor(sample, levels = c("Day4Rep1","Day4Rep2","GSE202322")))
+
+```
+
+```{r}
+ggplot(df_all, aes(x = sample, y = total_counts, fill = sample)) +
+  geom_violin(trim = FALSE, alpha = 0.7, color = "black", scale = "width") +
+  scale_y_log10(breaks = c(10, 100, 1000, 10000)) +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+```
+```{r}
+# repeat for d9 (Curio day10 objects, Visium day9)
+object_paths <- c(
+  "/data/projects/punim2394/lung_curio_mouse_pr8/processed_data/annotated_lungST_4_2_QCed.rds",
+  "/data/projects/punim2394/lung_curio_mouse_pr8/processed_data/annotated_lungST_4_3_QCed.rds"
+)
+
+sp1 <- readRDS(object_paths[1])
+sp2 <- readRDS(object_paths[2])
+
+df_day9rep1 <- bin_to_grid55_host(sp1, sample_name = "Day9Rep1", width = 55, scale_xy = 0.647)
+df_day9rep2 <- bin_to_grid55_host(sp2, sample_name = "Day9Rep2", width = 55, scale_xy = 0.647)
+
+df_combined <- dplyr::bind_rows(df_day9rep1, df_day9rep2)
+
+# ---- Visium day9 ----
+library(Seurat)
+
+data.dir  <- "/data/projects/punim2394/lung_visium_pub/day9"
+image.dir <- normalizePath(data.dir, winslash = "/")
+
+image <- Read10X_Image(image.dir, image.name = "tissue_lowres_image.png")
+d9 <- Load10X_Spatial(data.dir = data.dir, image = image)
+
+coords9 <- Seurat::GetTissueCoordinates(d9, image = names(d9@images)[1])
+
+df_d9 <- data.frame(
+  x = coords9$x,
+  y = coords9$y,
+  total_counts = d9$nCount_Spatial,   # UMIs
+  sample = "Visium_Day9"
+)
+
+df_all <- dplyr::bind_rows(df_combined, df_d9) %>%
+  dplyr::mutate(sample = factor(sample, levels = c("Day9Rep1","Day9Rep2","Visium_Day9")))
+
+
+```
+
+```{r}
+ggplot(df_all, aes(x = sample, y = total_counts, fill = sample)) +
+  geom_violin(trim = FALSE, alpha = 0.7, color = "black", scale = "width") +
+  scale_y_log10(breaks = c(1, 10, 100, 1000, 10000)) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```

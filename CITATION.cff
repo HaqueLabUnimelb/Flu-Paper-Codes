@@ -1,8 +1,13 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the associated manuscript and this software archive."
+message: "If you use this code, please cite the article of GEO series GSE341918 and this repository."
 type: software
 title: "Flu Paper Codes"
+abstract: "Analysis code for the Curio Seeker spatial transcriptomics of mouse lungs infected with influenza A/PR8 (GEO GSE341918): preprocessing, feature plots, RCTD, mapping to other viral references, PR8 expression and revision analyses."
 authors:
   - name: "Haque Lab, The University of Melbourne"
 repository-code: "https://github.com/HaqueLabUnimelb/Flu-Paper-Codes"
 license: MIT
+identifiers:
+  - type: url
+    value: "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918"
+    description: "Data: GEO series GSE341918"

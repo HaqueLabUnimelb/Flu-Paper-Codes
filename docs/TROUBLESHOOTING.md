@@ -1,43 +1,12 @@
 # Troubleshooting
 
-## A required variable is not set
-
-Copy `config/paths.example.env` to `config/paths.env`, replace all
-placeholders, and submit from the repository root. Set `FLU_CONFIG` if the
-configuration file is elsewhere.
-
-## A required RDS file is missing
-
-Check the filenames in `config/samples.example.tsv`. Use the explicit RCTD
-variables when edited inputs have different names. Do not rename or reassign
-samples without author confirmation.
-
-## R or package version checks fail
-
-The RCTD wrappers require R 4.3.x, Seurat 5.1.0, and spacexr 2.2.0. Point
-`FLU_R_ENV_PREFIX` to the correct environment. Do not bypass these checks
-without documenting a version change.
-
-## tidyverse or mltools is missing
-
-The inspected RCTD environment did not contain these plotting dependencies.
-Install them in a separate authorized environment or extend a copy of the
-environment, recording the installed versions.
-
-## Nextflow or a container runtime is unavailable
-
-Load site-provided modules or activate an authorized environment before
-submitting the Curio Seeker scripts. Confirm that the configured Curio Seeker
-release supports the supplied samplesheet and `--igenomes_base` value.
-
-## SLURM cannot open the log file
-
-Run `mkdir -p logs` in the repository root before `sbatch`. SLURM resolves
-the log path before the job body starts.
-
-## RCTD requires too much memory
-
-Use a large-memory compute partition. Do not test the full workflow on a login
-node. A lightweight input compatibility path is available by setting
-`RCTD_PREFLIGHT_ONLY=1`, but it still reads the RDS inputs and may require a
-compute node.
+| Message or symptom | What to do |
+|---|---|
+| "Required variable is not set" | Copy `config/paths.example.env` to `config/paths.env`, fill in the paths and submit from the root of the repository; or set `FLU_CONFIG` to the configuration file |
+| "Repository not found" | Submit from the root of the repository, or export `FLU_REPO_DIR` before `sbatch` |
+| "Required RDS input(s) not found" | Check the file names against `config/samples.example.tsv`; the RCTD scripts read the `_QCed_edit.rds` objects, the feature plots the `_QCed.rds` objects |
+| The version check of an RCTD wrapper stops the job | The wrappers require R 4.3, Seurat 5.1.0 and spacexr 2.2.0; point `FLU_R_ENV_PREFIX` to that environment |
+| `module load` fails | `FLU_ANACONDA_MODULE` names a module of the Spartan cluster; remove it from `config/paths.env` on other systems |
+| `library(tidyverse)` or `library(mltools)` fails | The feature-plot and visualisation scripts need them; the RCTD environment does not hold them (see `environment/README.md`) |
+| "nextflow is not available in PATH" | Load Nextflow and Singularity or Apptainer before `sbatch` |
+| SLURM cannot open the log file | Run `mkdir -p logs` in the directory you submit from (the root of the repository) |

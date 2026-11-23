@@ -1,0 +1,3040 @@
+[33mNextflow 24.10.0 is available - Please consider updating your version to it[m
+N E X T F L O W  ~  version 23.10.1
+Launching `main.nf` [tiny_maxwell] DSL2 - revision: 02bf7220a3
+
+WARN: Found unexpected parameters:
+* --star_ignore_sjdbgtf: false
+* --supply_sjdb_gtf_file: true
+* --build_star_index: false
+* --curio_seeker_docker: docker.io/curiobioinformatics/curio-seeker-pipeline:v2.0.0
+* --curio_seeker_singularity: /data/projects/punim1236/singularity_envs/curio-seeker-singularity:v2.0.0.sif
+* --curio_seeker_conda: /apps/easybuild/4.5.4/software/curio-seeker/0.0.1/
+* --run_seekerexplorer: false
+* --generate_combined_database: false
+* --extend_qc: false
+* --max_beads: 10000000
+* --barcode_chunk_size: 165000
+* --bb_min: 10
+* --gene_chunk_size: 1000
+* --top_bb_chunk_size: 2000000
+* --bam_chunk_size: 5000000
+* --fastq_chunk_size: 5000000
+- Ignore this warning: params.schema_ignore_params = "star_ignore_sjdbgtf,supply_sjdb_gtf_file,build_star_index,curio_seeker_docker,curio_seeker_singularity,curio_seeker_conda,run_seekerexplorer,generate_combined_database,extend_qc,max_beads,barcode_chunk_size,bb_min,gene_chunk_size,top_bb_chunk_size,bam_chunk_size,fastq_chunk_size" 
+
+
+
+------------------------------------------------------
+                                        ,--./,-.
+        ___     __   __   __   ___     /,-._.--~'
+  |\ | |__  __ /  ` /  \ |__) |__         }  {
+  | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                        `._,._,'
+  nf-core/curioseeker v1.0dev
+------------------------------------------------------
+Core Nextflow options
+  runName             : tiny_maxwell
+  containerEngine     : singularity
+  launchDir           : /data/scratch/projects/punim1236/curioseeker-2.0.0
+  workDir             : /data/scratch/projects/punim1236/lung_curio/temp
+  projectDir          : /data/scratch/projects/punim1236/curioseeker-2.0.0
+  userName            : camerongw
+  profile             : singularity
+  configFiles         : /data/scratch/projects/punim1236/curioseeker-2.0.0/nextflow.config, /data/scratch/projects/punim1236/lung_curio/curioseeker_slurm_lung.config
+
+Input/output options
+  input               : /data/scratch/projects/punim1236/lung_curio/samplesheet_igenome_lung.csv
+  outdir              : /data/scratch/projects/punim1236/lung_curio/results_opt_mouse_pr8
+
+Reference genome options
+  igenomes_base       : /data/scratch/projects/punim1236/curioseeker-2.0.0/references/
+
+Max job request options
+  max_cpus            : 32
+  max_memory          : 250.GB
+
+Other parameters
+  curio_seeker_conda  : /apps/easybuild/4.5.4/software/curio-seeker/0.0.1/
+  supply_sjdb_gtf_file: true
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+------------------------------------------------------
+If you use nf-core/curioseeker for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/curioseeker/blob/master/CITATIONS.md
+------------------------------------------------------
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (1)
+[18/b43269] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (3)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (4)
+[9b/0120bf] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (6)
+[9b/0120bf] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (8)
+[9b/0120bf] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (8)
+[9b/0120bf] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (8)
+[9b/0120bf] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2:59cdd445419f14abac76b31dd0d71217994cbcc9-0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-mulled-v2-1fa26d1ce03c295fe2fdcf85831a92fbcbd7e8c2-59cdd445419f14abac76b31dd0d71217994cbcc9-0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (8)
+[9b/0120bf] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+
+
+executor >  slurm (8)
+[9b/0120bf] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+
+
+executor >  slurm (8)
+[6b/5ec404] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (8)
+[6b/5ec404] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (8)
+[18/b43269] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (8)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (8)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (10)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (11)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[6e/d51da4] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[6e/d51da4] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[6e/d51da4] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[0f/d75264] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[93/65847b] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/subread:2.0.1--hed695b0_0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-subread-2.0.1--hed695b0_0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (12)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[93/65847b] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/subread:2.0.1--hed695b0_0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-subread-2.0.1--hed695b0_0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (13)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[93/65847b] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[99/3717cd] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/subread:2.0.1--hed695b0_0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-subread-2.0.1--hed695b0_0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (13)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[93/65847b] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[99/3717cd] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/subread:2.0.1--hed695b0_0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-subread-2.0.1--hed695b0_0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (13)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[17/e46734] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[99/3717cd] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+
+
+executor >  slurm (14)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[17/e46734] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[fd/3b0c4a] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+
+
+executor >  slurm (14)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[17/e46734] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[fd/3b0c4a] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (14)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[17/e46734] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[99/3717cd] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 1 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/samtools:1.15.1--h1170115_0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-samtools-1.15.1--h1170115_0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (15)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[17/e46734] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[99/3717cd] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 1 of 2
+[89/fd242a] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/samtools:1.15.1--h1170115_0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-samtools-1.15.1--h1170115_0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (15)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[17/e46734] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[99/3717cd] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 1 of 2
+[89/fd242a] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+Pulling Singularity image https://depot.galaxyproject.org/singularity/samtools:1.15.1--h1170115_0 [cache /data/scratch/projects/punim1236/lung_curio/temp/singularity/depot.galaxyproject.org-singularity-samtools-1.15.1--h1170115_0.img]
+WARN: Singularity cache directory has not been defined -- Remote image will be stored in the path: /data/scratch/projects/punim1236/lung_curio/temp/singularity -- Use the environment variable NXF_SINGULARITY_CACHEDIR to specify a different location
+
+executor >  slurm (15)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[99/3717cd] process > NF:CURIOSEEKER:PRIMARY_READ... [ 33%] 1 of 3
+[89/fd242a] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+
+
+executor >  slurm (16)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [ 33%] 1 of 3
+[89/fd242a] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+
+
+executor >  slurm (17)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[fd/3b0c4a] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[10/1acd58] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (17)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[fd/3b0c4a] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[10/1acd58] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (17)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[fd/3b0c4a] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[89/fd242a] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 1 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (19)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [ 33%] 1 of 3
+[8f/489210] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (19)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [ 33%] 1 of 3
+[8f/489210] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (19)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [ 33%] 1 of 3
+[8f/489210] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 1 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (20)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[10/1acd58] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[42/5728ae] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 1 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (20)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[10/1acd58] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[42/5728ae] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 1 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (20)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[10/1acd58] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[42/5728ae] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 2 of 2
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (20)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[42/5728ae] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (21)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (21)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [ 66%] 2 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (21)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[42/279743] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (21)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/e3792c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (22)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (22)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/74167d] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (22)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (22)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (26)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (26)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[3a/10e1ec] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (27)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (27)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[98/dfbe3a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (28)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (28)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (29)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cf/a46af8] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (32)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (32)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (32)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[67/c7b699] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (32)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[67/c7b699] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (32)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[16/84857b] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (32)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[a4/efa589] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (32)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (34)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[af/b4bf27] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[40/731454] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[40/731454] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[40/731454] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[38/94bfa0] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[40/731454] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[38/94bfa0] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[40/731454] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cf/a46af8] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[40/731454] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[20/5df5c2] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[40/731454] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[af/b4bf27] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[cd/e925af] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (36)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[40/731454] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_READ... -
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (39)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[34/09d6ec] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[21/67f488] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (44)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (44)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [  0%] 0 of 4
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (44)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[34/09d6ec] process > NF:CURIOSEEKER:PRIMARY_READ... [ 25%] 1 of 4
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (44)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[bc/ff6560] process > NF:CURIOSEEKER:PRIMARY_READ... [ 50%] 2 of 4
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (44)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[66/ec86ea] process > NF:CURIOSEEKER:PRIMARY_READ... [ 75%] 3 of 4
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (44)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:RE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (45)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[21/67f488] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[45/c23ac0] process > NF:CURIOSEEKER:SECONDARY:RE... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (45)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[21/67f488] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[45/c23ac0] process > NF:CURIOSEEKER:SECONDARY:RE... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (45)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[21/67f488] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 25%] 1 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[45/c23ac0] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 1 of 1
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (45)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[06/f72176] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[45/c23ac0] process > NF:CURIOSEEKER:SECONDARY:RE... [ 50%] 1 of 2
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (46)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[06/f72176] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[4a/8d7233] process > NF:CURIOSEEKER:SECONDARY:RE... [ 50%] 1 of 2
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (46)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[06/f72176] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[4a/8d7233] process > NF:CURIOSEEKER:SECONDARY:RE... [ 50%] 1 of 2
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (46)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[06/f72176] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[4a/8d7233] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 2 of 2
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (47)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[98/5ed16c] process > NF:CURIOSEEKER:SECONDARY:RE... [ 66%] 2 of 3
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (47)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[98/5ed16c] process > NF:CURIOSEEKER:SECONDARY:RE... [ 66%] 2 of 3
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (47)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[94/f9fb07] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[98/5ed16c] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 3 of 3
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (47)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:PRIMARY_JOIN... -
+[98/5ed16c] process > NF:CURIOSEEKER:SECONDARY:RE... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (50)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (51)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[d8/9e6798] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (52)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[db/32fee5] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (52)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[db/32fee5] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (52)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[db/32fee5] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [ 75%] 3 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (52)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[db/32fee5] process > NF:CURIOSEEKER:PRIMARY_JOIN... [  0%] 0 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (52)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[ce/160114] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 25%] 1 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (52)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[d8/9e6798] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 50%] 2 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (52)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[db/32fee5] process > NF:CURIOSEEKER:PRIMARY_JOIN... [ 75%] 3 of 4
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (52)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (56)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[3b/722e12] process > NF:CURIOSEEKER:SECONDARY:FO... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (56)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[3b/722e12] process > NF:CURIOSEEKER:SECONDARY:FO... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (57)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[90/22f4a4] process > NF:CURIOSEEKER:SECONDARY:FO... [ 25%] 1 of 4
+[5b/3fe8cd] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 1
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (58)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[05/afe0f7] process > NF:CURIOSEEKER:SECONDARY:FO... [ 50%] 2 of 4
+[7c/e4a0ef] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 2
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (59)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[3b/722e12] process > NF:CURIOSEEKER:SECONDARY:FO... [ 75%] 3 of 4
+[f5/17a322] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 3
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (59)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[f5/17a322] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:FO... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (61)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[b9/ab8242] process > NF:CURIOSEEKER:SECONDARY:FO... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 2
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (68)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[28/5935e4] process > NF:CURIOSEEKER:SECONDARY:FO... [  0%] 0 of 4
+[e6/88fd41] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (68)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[28/5935e4] process > NF:CURIOSEEKER:SECONDARY:FO... [  0%] 0 of 4
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (68)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[28/5935e4] process > NF:CURIOSEEKER:SECONDARY:FO... [  0%] 0 of 4
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+
+executor >  slurm (68)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[ca/070a25] process > NF:CURIOSEEKER:SECONDARY:FO... [ 20%] 1 of 5, failed: 1...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[ca/070a25] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (1)
+
+executor >  slurm (69)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[36/166836] process > NF:CURIOSEEKER:SECONDARY:FO... [ 20%] 1 of 5, failed: 1...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[ca/070a25] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (1)
+
+executor >  slurm (71)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[8f/f6856f] process > NF:CURIOSEEKER:SECONDARY:FO... [ 42%] 3 of 7, failed: 3...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[ca/070a25] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[b9/ab8242] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (1)
+[7f/c5219d] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (1)
+
+executor >  slurm (72)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[07/8b55c8] process > NF:CURIOSEEKER:SECONDARY:FO... [ 50%] 4 of 8, failed: 4...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[ca/070a25] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[b9/ab8242] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (1)
+[7f/c5219d] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[28/5935e4] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (1)
+
+executor >  slurm (72)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[07/8b55c8] process > NF:CURIOSEEKER:SECONDARY:FO... [ 50%] 4 of 8, failed: 4...
+[6f/8f6d47] process > NF:CURIOSEEKER:SECONDARY:GE... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[ca/070a25] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[b9/ab8242] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (1)
+[7f/c5219d] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[28/5935e4] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (1)
+
+executor >  slurm (72)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[07/8b55c8] process > NF:CURIOSEEKER:SECONDARY:FO... [ 50%] 4 of 8, failed: 4...
+[6f/8f6d47] process > NF:CURIOSEEKER:SECONDARY:GE... [ 50%] 2 of 4
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[ca/070a25] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[b9/ab8242] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (1)
+[7f/c5219d] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[28/5935e4] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (1)
+
+executor >  slurm (73)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[30/2971d0] process > NF:CURIOSEEKER:SECONDARY:FO... [ 55%] 5 of 9, failed: 5...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[ca/070a25] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[b9/ab8242] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (1)
+[7f/c5219d] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (1)
+[28/5935e4] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (1)
+[36/166836] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (2)
+
+executor >  slurm (73)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[30/2971d0] process > NF:CURIOSEEKER:SECONDARY:FO... [ 55%] 5 of 9, failed: 5...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[36/166836] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (2)
+
+
+
+
+
+executor >  slurm (76)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[14/a187b1] process > NF:CURIOSEEKER:SECONDARY:FO... [ 66%] 8 of 12, failed: ...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[36/166836] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (2)
+[74/7bc953] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (2)
+[8f/f6856f] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (2)
+[07/8b55c8] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (2)
+
+
+executor >  slurm (76)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[14/a187b1] process > NF:CURIOSEEKER:SECONDARY:FO... [ 66%] 8 of 12, failed: ...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[74/7bc953] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (2)
+[8f/f6856f] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (2)
+[07/8b55c8] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (2)
+
+
+executor >  slurm (79)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[5f/5d9a11] process > NF:CURIOSEEKER:SECONDARY:FO... [ 73%] 11 of 15, failed:...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[74/7bc953] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (2)
+[8f/f6856f] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (2)
+[07/8b55c8] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (2)
+[30/2971d0] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[92/b63e29] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (3)
+[36/ba49c9] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (3)
+
+executor >  slurm (79)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[5f/5d9a11] process > NF:CURIOSEEKER:SECONDARY:FO... [ 73%] 11 of 15, failed:...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[30/2971d0] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[92/b63e29] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (3)
+[36/ba49c9] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (3)
+
+
+
+
+executor >  slurm (79)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[5f/5d9a11] process > NF:CURIOSEEKER:SECONDARY:FO... [ 73%] 11 of 15, failed:...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[30/2971d0] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[92/b63e29] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (3)
+[36/ba49c9] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (3)
+
+
+
+
+executor >  slurm (79)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[14/a187b1] process > NF:CURIOSEEKER:SECONDARY:FO... [ 75%] 12 of 16, failed:...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[30/2971d0] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[92/b63e29] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (3)
+[36/ba49c9] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[14/a187b1] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (3)
+
+executor >  slurm (80)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[e6/cf38d3] process > NF:CURIOSEEKER:SECONDARY:FO... [ 75%] 12 of 16, failed:...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[30/2971d0] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[92/b63e29] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (3)
+[36/ba49c9] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[14/a187b1] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (3)
+
+executor >  slurm (80)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[73/c58678] process > NF:CURIOSEEKER:SECONDARY:AN... [  0%] 0 of 4
+[e6/cf38d3] process > NF:CURIOSEEKER:SECONDARY:FO... [ 75%] 12 of 16, failed:...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... -
+[30/2971d0] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[92/b63e29] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (3)
+[36/ba49c9] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[14/a187b1] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (3)
+ERROR ~ Error executing process > 'NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)'
+
+Caused by:
+  Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1)
+
+Command executed:
+
+  formatconvert.py \
+      lungST_2.3 \
+      lungST_2.3_MoleculesPerMatchedBead.mtx \
+      lungST_2.3_barcodes.tsv \
+      lungST_2.3_genes.tsv \
+      lungST_2.3_MatchedBeadLocation.csv
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  INFO:    Converting SIF file to temporary sandbox...
+  WARNING: underlay of /etc/localtime required more than 50 (75) bind mounts
+  Traceback (most recent call last):
+    File "/data/scratch/projects/punim1236/curioseeker-2.0.0/bin/formatconvert.py", line 2, in <module>
+      import scanpy as sc
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/__init__.py", line 14, in <module>
+      from . import tools as tl
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/tools/__init__.py", line 1, in <module>
+      from ..preprocessing import pca
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/__init__.py", line 1, in <module>
+      from ._recipes import recipe_zheng17, recipe_weinreb17, recipe_seurat
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/_recipes.py", line 8, in <module>
+      from ._deprecated.highly_variable_genes import (
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/_deprecated/highly_variable_genes.py", line 11, in <module>
+      from .._utils import _get_mean_var
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/_utils.py", line 46, in <module>
+      def sparse_mean_var_minor_axis(data, indices, major_len, minor_len, dtype):
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/numba/core/decorators.py", line 234, in wrapper
+      disp.enable_caching()
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/numba/core/dispatcher.py", line 863, in enable_caching
+      self._cache = FunctionCache(self.py_func)
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/numba/core/caching.py", line 601, in __init__
+      self._impl = self._impl_class(py_func)
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/numba/core/caching.py", line 337, in __init__
+      raise RuntimeError("cannot cache function %r: no locator available "
+  RuntimeError: cannot cache function 'sparse_mean_var_minor_axis': no locator available for file '/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/_utils.py'
+  INFO:    Cleaning up image...
+
+Work dir:
+  /data/scratch/projects/punim1236/lung_curio/temp/95/9da89ba99582f8bd39095dfcf23b4e
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+-[nf-core/curioseeker] Pipeline completed with errors-
+WARN: Killing running tasks (7)
+
+executor >  slurm (80)
+[8c/b35b9f] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[79/88b913] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[3a/998349] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[c8/685562] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[91/1f3d1a] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[68/d29b24] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[55/78aab2] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[d6/888f02] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[ce/ea9e70] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[15/fc6f6c] process > NF:CURIOSEEKER:PRIMARY_READ... [100%] 4 of 4 ✔
+[fd/5c40b1] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[a1/3ed02d] process > NF:CURIOSEEKER:PRIMARY_JOIN... [100%] 4 of 4 ✔
+[e4/a6b8af] process > NF:CURIOSEEKER:SECONDARY:RE... [100%] 4 of 4 ✔
+[9c/f09703] process > NF:CURIOSEEKER:SECONDARY:FO... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:AN... -
+[8f/03f673] process > NF:CURIOSEEKER:SECONDARY:FO... [107%] 14 of 13, failed:...
+[61/4d4e08] process > NF:CURIOSEEKER:SECONDARY:GE... [100%] 4 of 4 ✔
+[-        ] process > NF:CURIOSEEKER:SECONDARY:GE... [  0%] 0 of 3
+[30/2971d0] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[92/b63e29] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.2)` terminated with an error exit status (1) -- Execution is retried (3)
+[36/ba49c9] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_4.3)` terminated with an error exit status (1) -- Execution is retried (3)
+[14/a187b1] NOTE: Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.2)` terminated with an error exit status (1) -- Execution is retried (3)
+ERROR ~ Error executing process > 'NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)'
+
+Caused by:
+  Process `NF:CURIOSEEKER:SECONDARY:FORMATCONVERT (lungST_2.3)` terminated with an error exit status (1)
+
+Command executed:
+
+  formatconvert.py \
+      lungST_2.3 \
+      lungST_2.3_MoleculesPerMatchedBead.mtx \
+      lungST_2.3_barcodes.tsv \
+      lungST_2.3_genes.tsv \
+      lungST_2.3_MatchedBeadLocation.csv
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  INFO:    Converting SIF file to temporary sandbox...
+  WARNING: underlay of /etc/localtime required more than 50 (75) bind mounts
+  Traceback (most recent call last):
+    File "/data/scratch/projects/punim1236/curioseeker-2.0.0/bin/formatconvert.py", line 2, in <module>
+      import scanpy as sc
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/__init__.py", line 14, in <module>
+      from . import tools as tl
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/tools/__init__.py", line 1, in <module>
+      from ..preprocessing import pca
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/__init__.py", line 1, in <module>
+      from ._recipes import recipe_zheng17, recipe_weinreb17, recipe_seurat
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/_recipes.py", line 8, in <module>
+      from ._deprecated.highly_variable_genes import (
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/_deprecated/highly_variable_genes.py", line 11, in <module>
+      from .._utils import _get_mean_var
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/_utils.py", line 46, in <module>
+      def sparse_mean_var_minor_axis(data, indices, major_len, minor_len, dtype):
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/numba/core/decorators.py", line 234, in wrapper
+      disp.enable_caching()
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/numba/core/dispatcher.py", line 863, in enable_caching
+      self._cache = FunctionCache(self.py_func)
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/numba/core/caching.py", line 601, in __init__
+      self._impl = self._impl_class(py_func)
+    File "/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/numba/core/caching.py", line 337, in __init__
+      raise RuntimeError("cannot cache function %r: no locator available "
+  RuntimeError: cannot cache function 'sparse_mean_var_minor_axis': no locator available for file '/opt/conda/envs/curio-seeker/lib/python3.10/site-packages/scanpy/preprocessing/_utils.py'
+  INFO:    Cleaning up image...
+
+Work dir:
+  /data/scratch/projects/punim1236/lung_curio/temp/95/9da89ba99582f8bd39095dfcf23b4e
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+ -- Check '.nextflow.log' file for details
+WARN: Graphviz is required to render the execution DAG in the given format -- See http://www.graphviz.org for more info.
+
+Job ID           : 1634899
+Cluster          : spartan
+User/Project     : camerongw/punim1236
+Nodes            : 1
+Wall-clock time  : 02:32:04 / 14-00:00:00
+
+Displaying overall resources usage from 2024-11-15 16:14:57 to 2024-11-15 18:47:01:
+
+NODE            CPU#        TOT%   ( USR   / SYS   / WIO   / IDLE  ) 
+
+spartan-bm002 : 
+                CPU# 1    : 2.8    (   0.9 /   1.9 /   0.0 /  97.2 ) 
+
+
+Allocated CPUs            : 1    
+  CPUs with usage <25%    : 1    
+  CPUs with usage <50%    : 0    
+  CPUs with usage >50%    : 0    
+
+Memory used (RAM)         : 11.4%  [975MB of 8590MB]
+
+--------------------------------------------
+

@@ -1,0 +1,139 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) slurm/default   2) spartan/rhel9
+Started: 2026-07-29T15:55:17+10:00
+Host: spartan-bm031.hpc.unimelb.edu.au
+R script: /data/projects/punim2394/lung_curio_mouse_pr8/OlliesFluRevisionCode/RCTD/RCTD_flu_d10_multi_spacexr2.2.R
+R version 4.3.3 (2024-02-29) 
+Seurat 5.1.0 
+spacexr 2.2.0 
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+R: R version 4.3.3 (2024-02-29)
+Seurat: 5.1.0
+spacexr: 2.2.0
+
+          T cells         Monocytes          NK cells   Dendritic cells 
+             1628               431               455                91 
+      Macrophages           B cells     Stromal cells Endothelial cells 
+              188               349                15                 2 
+      Neutrophils  Epithelial cells 
+               10              5969 
+Begin: process_cell_type_info
+process_cell_type_info: number of cells in reference: 9138
+process_cell_type_info: number of genes in reference: 27998
+
+          B cells   Dendritic cells Endothelial cells  Epithelial cells 
+              349                91                 2              5969 
+      Macrophages         Monocytes       Neutrophils          NK cells 
+              188               431                10               455 
+    Stromal cells           T cells 
+               15              1628 
+End: process_cell_type_info
+create.RCTD.replicates: creating RCTD for replicate 1
+create.RCTD: getting regression differentially expressed genes: 
+get_de_genes: B cells found DE genes: 59
+get_de_genes: Dendritic cells found DE genes: 83
+get_de_genes: Endothelial cells found DE genes: 896
+get_de_genes: Epithelial cells found DE genes: 137
+get_de_genes: Macrophages found DE genes: 49
+get_de_genes: Monocytes found DE genes: 87
+get_de_genes: Neutrophils found DE genes: 246
+get_de_genes: NK cells found DE genes: 88
+get_de_genes: Stromal cells found DE genes: 241
+get_de_genes: T cells found DE genes: 64
+get_de_genes: total DE genes: 1637
+create.RCTD: getting platform effect normalization differentially expressed genes: 
+get_de_genes: B cells found DE genes: 203
+get_de_genes: Dendritic cells found DE genes: 196
+get_de_genes: Endothelial cells found DE genes: 1053
+get_de_genes: Epithelial cells found DE genes: 238
+get_de_genes: Macrophages found DE genes: 145
+get_de_genes: Monocytes found DE genes: 214
+get_de_genes: Neutrophils found DE genes: 489
+get_de_genes: NK cells found DE genes: 211
+get_de_genes: Stromal cells found DE genes: 470
+get_de_genes: T cells found DE genes: 198
+get_de_genes: total DE genes: 2515
+create.RCTD.replicates: creating RCTD for replicate 2
+create.RCTD: getting regression differentially expressed genes: 
+get_de_genes: B cells found DE genes: 58
+get_de_genes: Dendritic cells found DE genes: 83
+get_de_genes: Endothelial cells found DE genes: 881
+get_de_genes: Epithelial cells found DE genes: 138
+get_de_genes: Macrophages found DE genes: 47
+get_de_genes: Monocytes found DE genes: 86
+get_de_genes: Neutrophils found DE genes: 248
+get_de_genes: NK cells found DE genes: 89
+get_de_genes: Stromal cells found DE genes: 242
+get_de_genes: T cells found DE genes: 66
+get_de_genes: total DE genes: 1627
+create.RCTD: getting platform effect normalization differentially expressed genes: 
+get_de_genes: B cells found DE genes: 200
+get_de_genes: Dendritic cells found DE genes: 197
+get_de_genes: Endothelial cells found DE genes: 1036
+get_de_genes: Epithelial cells found DE genes: 239
+get_de_genes: Macrophages found DE genes: 143
+get_de_genes: Monocytes found DE genes: 212
+get_de_genes: Neutrophils found DE genes: 489
+get_de_genes: NK cells found DE genes: 211
+get_de_genes: Stromal cells found DE genes: 470
+get_de_genes: T cells found DE genes: 197
+get_de_genes: total DE genes: 2494
+Warning message:
+In asMethod(object) :
+  sparse->dense coercion: allocating vector of size 1.2 GiB
+           used  (Mb) gc trigger   (Mb)   max used   (Mb)
+Ncells  3359421 179.5    5026761  268.5    5026761  268.5
+Vcells 11822244  90.2  640770025 4888.7 1000281582 7631.6
+run.RCTD.replicates: running RCTD for replicate 1
+fitBulk: decomposing bulk
+chooseSigma: using initial Q_mat with sigma =  1
+Likelihood value: 31478.7243942933
+Sigma value:  0.84
+Likelihood value: 31404.156256675
+Sigma value:  0.72
+Likelihood value: 31386.9576404146
+Sigma value:  0.72
+run.RCTD.replicates: running RCTD for replicate 2
+fitBulk: decomposing bulk
+chooseSigma: using initial Q_mat with sigma =  1
+Likelihood value: 48315.0116365435
+Sigma value:  0.88
+Likelihood value: 48273.2718725089
+Sigma value:  0.86
+Likelihood value: 48271.3892948581
+Sigma value:  0.86
+Saved RCTD result to: /data/projects/punim2394/lung_curio_mouse_pr8/OlliesFluRevisionCode/RCTD_day10/Day10mouseRCTDoutmin30_multi.rds
+Finished: 2026-07-29T16:10:37+10:00
+Job ID           : 28289107
+Cluster          : spartan
+User/Project     : oskinner/punim2394
+Nodes            : 1
+Wall-clock time  : 00:15:24 / 31-00:00:00
+
+Displaying overall resources usage from 2026-07-29 15:55:14 to 2026-07-29 16:10:38:
+
+NODE            CPU#        TOT%   ( USR   / SYS   / WIO   / IDLE  ) 
+
+spartan-bm031 : 
+                CPU# 1    : 97.6   (  95.5 /   2.0 /   0.0 /   2.4 ) 
+
+
+Allocated CPUs            : 1    
+  CPUs with usage <25%    : 0    
+  CPUs with usage <50%    : 0    
+  CPUs with usage >50%    : 1    
+
+Memory used (RAM)         : 2.5%  [8023MB of 322123MB]
+
+--------------------------------------------
+

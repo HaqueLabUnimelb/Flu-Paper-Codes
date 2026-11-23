@@ -1,0 +1,46 @@
+Started: 2026-07-28T17:51:43+10:00
+Host: spartan-bm031.hpc.unimelb.edu.au
+Conda: conda 24.1.2
+Environment: /data/projects/punim2394/lung_curio_mouse_pr8/OlliesFluRevisionCode/RCTD/conda_envs/rctd_spacexr_2.2
+Reusing existing conda environment: /data/projects/punim2394/lung_curio_mouse_pr8/OlliesFluRevisionCode/RCTD/conda_envs/rctd_spacexr_2.2
+* installing to library ‘/data/gpfs/projects/punim2394/lung_curio_mouse_pr8/OlliesFluRevisionCode/RCTD/conda_envs/rctd_spacexr_2.2/lib/R/library’
+* installing *source* package ‘spacexr’ ...
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (spacexr)
+R version 4.3.3 (2024-02-29) 
+Seurat 5.1.0 
+spacexr 2.2.0 
+Running Seurat/spacexr input compatibility preflight
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+R: R version 4.3.3 (2024-02-29)
+Seurat: 5.1.0
+spacexr: 2.2.0
+
+    Stromal cells           B cells       Neutrophils Endothelial cells 
+              373              2545               320              1521 
+      Macrophages         Monocytes  Epithelial cells          NK cells 
+              669               737              1802               324 
+     Granulocytes        Mast Cells   Dendritic cells           T cells 
+               26                30               107               234 
+Preflight reference: 25954 genes x 8688 cells
+Preflight puck spots: 42390, 47207
+RCTD input compatibility preflight passed.
+Finished: 2026-07-28T17:52:13+10:00

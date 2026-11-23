@@ -56,6 +56,9 @@ mouse4 <- NormalizeData(mouse4)
 mouse5 <- NormalizeData(mouse5)
 
 ## plot
+# Six plots that are displayed but not saved ask for a gene that is absent from the object ("could not detect
+# expression"). In an interactive session such a call prints an error and the session goes on; here these
+# calls are wrapped in try() so that Rscript goes on in the same way.
 
 
 
@@ -137,9 +140,9 @@ FeaturePlot(mouse1, reduction = 'SPATIAL', features = 'Il6', order=T, raster = F
 ggsave(filename = "mouse1_Il6.jpeg", device = "jpeg", path = feature_output_dir, width = 12, height = 12, units = "cm")
 
 # could not detect expression of Ifna1 in array
-FeaturePlot(mouse1, reduction = 'SPATIAL', features = 'Ifna1', order=T, raster = F) + coord_fixed() +
+try(FeaturePlot(mouse1, reduction = 'SPATIAL', features = 'Ifna1', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
-  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes()
+  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes())
 
 FeaturePlot(mouse1, reduction = 'SPATIAL', features = 'Ifnb1', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
@@ -178,9 +181,9 @@ FeaturePlot(mouse2, reduction = 'SPATIAL', features = 'Il6', order=T, raster = F
 ggsave(filename = "mouse2_Il6.jpeg", device = "jpeg", path = feature_output_dir, width = 12, height = 12, units = "cm")
 
 # could not detect expression of Ifna1 in array
-FeaturePlot(mouse2, reduction = 'SPATIAL', features = 'Ifna1', order=T, raster = F) + coord_fixed() +
+try(FeaturePlot(mouse2, reduction = 'SPATIAL', features = 'Ifna1', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
-  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes()
+  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes())
 
 FeaturePlot(mouse2, reduction = 'SPATIAL', features = 'Ifnb1', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
@@ -219,14 +222,14 @@ FeaturePlot(mouse4, reduction = 'SPATIAL', features = 'Il6', order=T, raster = F
 ggsave(filename = "mouse4_Il6.jpeg", device = "jpeg", path = feature_output_dir, width = 12, height = 12, units = "cm")
 
 # could not detect expression of Ifna1 in array
-FeaturePlot(mouse4, reduction = 'SPATIAL', features = 'Ifna1', order=T, raster = F) + coord_fixed() +
+try(FeaturePlot(mouse4, reduction = 'SPATIAL', features = 'Ifna1', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
-  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes()
+  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes())
 
 # could not detect expression of Ifnb1 in array
-FeaturePlot(mouse4, reduction = 'SPATIAL', features = 'Ifnb1', order=T, raster = F) + coord_fixed() +
+try(FeaturePlot(mouse4, reduction = 'SPATIAL', features = 'Ifnb1', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
-  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes()
+  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes())
 
 FeaturePlot(mouse4, reduction = 'SPATIAL', features = 'Cxcl1', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
@@ -260,9 +263,9 @@ FeaturePlot(mouse5, reduction = 'SPATIAL', features = 'Il6', order=T, raster = F
 ggsave(filename = "mouse5_Il6.jpeg", device = "jpeg", path = feature_output_dir, width = 12, height = 12, units = "cm")
 
 # could not detect expression of Ifna1 in array
-FeaturePlot(mouse5, reduction = 'SPATIAL', features = 'Ifna1', order=T, raster = F) + coord_fixed() +
+try(FeaturePlot(mouse5, reduction = 'SPATIAL', features = 'Ifna1', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
-  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes()
+  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes())
 
 # could not detect expression of Ifnb1 in array
 FeaturePlot(mouse5, reduction = 'SPATIAL', features = 'Ifnb1', order=T, raster = F) + coord_fixed() +
@@ -319,9 +322,9 @@ FeaturePlot(mouse2, reduction = 'SPATIAL', features = 'Ighm', order=T, raster = 
 ggsave(filename = "mouse2_Ighm.jpeg", device = "jpeg", path = feature_output_dir, width = 12, height = 12, units = "cm")
 
 # Not featured
-FeaturePlot(mouse2, reduction = 'SPATIAL', features = 'Ighg2c', order=T, raster = F) + coord_fixed() +
+try(FeaturePlot(mouse2, reduction = 'SPATIAL', features = 'Ighg2c', order=T, raster = F) + coord_fixed() +
   theme(axis.ticks=element_blank(), axis.text = element_blank(), panel.background = element_rect(fill = "white")) +
-  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes()
+  scale_colour_viridis_c(option = 'magma', direction = -1, begin = 0.1, end = 0.95)+ NoAxes())
 
 # Mouse 4
 FeaturePlot(mouse4, reduction = 'SPATIAL', features = 'Igkc', order=T, raster = F) + coord_fixed() +

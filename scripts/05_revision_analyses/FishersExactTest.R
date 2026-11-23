@@ -1,20 +1,26 @@
 #!/usr/bin/env Rscript
 # Purpose: test whether two gene lists overlap more than expected by chance.
-# Inputs: a background gene universe and two one-column gene-list text files.
-# Output: a tab-separated summary written to FLU_FISHER_OUTPUT (and stdout).
+# Inputs: a background gene list and two gene lists (text files, one gene per line, first column is read).
+# Output: the test printed to stdout, and a one-row tab-separated summary when an output file is given.
 #
 # Usage:
 #   Rscript FishersExactTest.R BACKGROUND LIST_1 LIST_2 [OUTPUT_TSV]
-# Paths can instead be supplied with FLU_FISHER_UNIVERSE,
-# FLU_FISHER_GENE_LIST_1, FLU_FISHER_GENE_LIST_2 and FLU_FISHER_OUTPUT.
+# Paths can instead be supplied with FLU_FISHER_UNIVERSE, FLU_FISHER_GENE_LIST_1, FLU_FISHER_GENE_LIST_2
+# and FLU_FISHER_OUTPUT.
+#
+# The calculation is that of original_scripts/05_revision_analyses/FishersExactTest.R: the number of
+# background genes is the universe size N, the two lists are counted as read (a, b), their intersection is the
+# overlap k, and a one-sided Fisher's exact test is run on matrix(c(k, a - k, b - k, N - (a + b - k)), nrow = 2).
+# Genes of a tested list that are absent from the background file are counted as in the original; their number
+# is reported in the summary.
 
 args <- commandArgs(trailingOnly = TRUE)
 
-path_argument <- function(position, env_name, default = "") {
+path_argument <- function(position, env_name) {
   if (length(args) >= position && nzchar(args[[position]])) {
     return(args[[position]])
   }
-  Sys.getenv(env_name, unset = default)
+  Sys.getenv(env_name, unset = "")
 }
 
 universe_file <- path_argument(1L, "FLU_FISHER_UNIVERSE")
@@ -23,7 +29,6 @@ list_2_file <- path_argument(3L, "FLU_FISHER_GENE_LIST_2")
 output_file <- path_argument(4L, "FLU_FISHER_OUTPUT")
 
 input_files <- c(universe_file, list_1_file, list_2_file)
-input_labels <- c("background universe", "gene list 1", "gene list 2")
 if (any(!nzchar(input_files))) {
   stop(
     "Supply BACKGROUND, LIST_1 and LIST_2 as command-line arguments or ",
@@ -35,84 +40,48 @@ if (length(missing_inputs) > 0L) {
   stop("Input file(s) not found: ", paste(missing_inputs, collapse = ", "))
 }
 
-read_gene_list <- function(path, label) {
-  table <- read.table(
-    path,
-    header = FALSE,
-    stringsAsFactors = FALSE,
-    comment.char = "",
-    quote = ""
-  )
-  if (ncol(table) < 1L) {
-    stop("No gene column was found in ", label, ": ", path)
-  }
-  genes <- trimws(as.character(table[[1L]]))
-  genes <- unique(genes[nzchar(genes) & !is.na(genes)])
-  if (length(genes) == 0L) {
-    stop("No gene identifiers were found in ", label, ": ", path)
-  }
-  genes
-}
+total_gene_universe <- read.table(file = universe_file, stringsAsFactors = FALSE)[, 1]
+gene_list_1 <- read.table(file = list_1_file, stringsAsFactors = FALSE)[, 1]
+gene_list_2 <- read.table(file = list_2_file, stringsAsFactors = FALSE)[, 1]
 
-gene_universe <- read_gene_list(universe_file, input_labels[[1L]])
-gene_list_1 <- read_gene_list(list_1_file, input_labels[[2L]])
-gene_list_2 <- read_gene_list(list_2_file, input_labels[[3L]])
+# Inputs
+A <- gene_list_1
+B <- gene_list_2
+N <- length(total_gene_universe)
 
-outside_universe <- list(
-  gene_list_1 = setdiff(gene_list_1, gene_universe),
-  gene_list_2 = setdiff(gene_list_2, gene_universe)
-)
-outside_counts <- lengths(outside_universe)
-if (any(outside_counts > 0L)) {
-  details <- paste(
-    names(outside_counts)[outside_counts > 0L],
-    outside_counts[outside_counts > 0L],
-    sep = "=",
-    collapse = ", "
-  )
-  stop("Every tested gene must be in the background universe; outside counts: ", details)
-}
+k <- length(intersect(A, B))
+a <- length(A)
+b <- length(B)
 
-overlap_size <- length(intersect(gene_list_1, gene_list_2))
-list_1_size <- length(gene_list_1)
-list_2_size <- length(gene_list_2)
-universe_size <- length(gene_universe)
+# Build contingency table
+mat <- matrix(c(
+  k,
+  a - k,
+  b - k,
+  N - (a + b - k)
+), nrow = 2)
 
-# Rows represent membership in list 1; columns represent membership in list 2.
-contingency_table <- matrix(
-  c(
-    overlap_size,
-    list_1_size - overlap_size,
-    list_2_size - overlap_size,
-    universe_size - list_1_size - list_2_size + overlap_size
-  ),
-  nrow = 2L,
-  byrow = TRUE,
-  dimnames = list(
-    list_1 = c("in", "not_in"),
-    list_2 = c("in", "not_in")
-  )
-)
-if (any(contingency_table < 0L)) {
-  stop("The gene lists and background universe produced an invalid contingency table.")
-}
+# Fisher's test
+test <- fisher.test(mat, alternative = "greater")
+print(test)
 
-test <- fisher.test(contingency_table, alternative = "greater")
 summary <- data.frame(
-  universe_size = universe_size,
-  gene_list_1_size = list_1_size,
-  gene_list_2_size = list_2_size,
-  overlap_size = overlap_size,
+  universe_size = N,
+  gene_list_1_size = a,
+  gene_list_2_size = b,
+  overlap_size = k,
+  gene_list_1_outside_background = length(setdiff(A, total_gene_universe)),
+  gene_list_2_outside_background = length(setdiff(B, total_gene_universe)),
   alternative = "greater",
   odds_ratio = unname(test$estimate),
+  conf_low = test$conf.int[1],
   p_value = test$p.value,
   stringsAsFactors = FALSE
 )
+print(summary, digits = 17)
 
-write.table(summary, stdout(), sep = "\t", quote = FALSE, row.names = FALSE)
 if (nzchar(output_file)) {
-  output_dir <- dirname(output_file)
-  dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
-  write.table(summary, output_file, sep = "\t", quote = FALSE, row.names = FALSE)
+  dir.create(dirname(output_file), recursive = TRUE, showWarnings = FALSE)
+  write.table(format(summary, digits = 17), output_file, sep = "\t", quote = FALSE, row.names = FALSE)
   message("Saved Fisher's exact-test summary: ", output_file)
 }

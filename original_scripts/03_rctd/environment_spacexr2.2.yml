@@ -1,0 +1,23 @@
+channels:
+  - conda-forge
+dependencies:
+  - r-base=4.3.*
+  - r-seurat=5.1.0
+  - r-readr
+  - r-ggplot2
+  - r-pals
+  - r-matrix
+  - r-doparallel
+  - r-foreach
+  - r-quadprog
+  - r-tibble
+  - r-dplyr
+  - r-reshape2
+  - r-knitr
+  - r-rmarkdown
+  - r-fields
+  - r-mgcv
+  - r-compquadform
+  - r-rfast
+  - r-locfdr
+  - make

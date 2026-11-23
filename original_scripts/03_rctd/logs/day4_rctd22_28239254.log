@@ -1,0 +1,142 @@
+Started: 2026-07-28T17:52:20+10:00
+Host: spartan-bm031.hpc.unimelb.edu.au
+R script: /data/projects/punim2394/lung_curio_mouse_pr8/OlliesFluRevisionCode/RCTD/RCTD_flu_d4_multi_spacexr2.2.R
+R version 4.3.3 (2024-02-29) 
+Seurat 5.1.0 
+spacexr 2.2.0 
+Loading required package: SeuratObject
+Loading required package: sp
+
+Attaching package: ‘SeuratObject’
+
+The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+R: R version 4.3.3 (2024-02-29)
+Seurat: 5.1.0
+spacexr: 2.2.0
+
+    Stromal cells           B cells       Neutrophils Endothelial cells 
+              373              2545               320              1521 
+      Macrophages         Monocytes  Epithelial cells          NK cells 
+              669               737              1802               324 
+     Granulocytes        Mast Cells   Dendritic cells           T cells 
+               26                30               107               234 
+Begin: process_cell_type_info
+process_cell_type_info: number of cells in reference: 8688
+process_cell_type_info: number of genes in reference: 25954
+
+          B cells   Dendritic cells Endothelial cells  Epithelial cells 
+             2545               107              1521              1802 
+     Granulocytes       Macrophages        Mast Cells         Monocytes 
+               26               669                30               737 
+      Neutrophils          NK cells     Stromal cells           T cells 
+              320               324               373               234 
+End: process_cell_type_info
+create.RCTD.replicates: creating RCTD for replicate 1
+create.RCTD: getting regression differentially expressed genes: 
+get_de_genes: B cells found DE genes: 65
+get_de_genes: Dendritic cells found DE genes: 228
+get_de_genes: Endothelial cells found DE genes: 359
+get_de_genes: Epithelial cells found DE genes: 151
+get_de_genes: Granulocytes found DE genes: 124
+get_de_genes: Macrophages found DE genes: 146
+get_de_genes: Mast Cells found DE genes: 154
+get_de_genes: Monocytes found DE genes: 128
+get_de_genes: Neutrophils found DE genes: 288
+get_de_genes: NK cells found DE genes: 118
+get_de_genes: Stromal cells found DE genes: 273
+get_de_genes: T cells found DE genes: 188
+get_de_genes: total DE genes: 1643
+create.RCTD: getting platform effect normalization differentially expressed genes: 
+get_de_genes: B cells found DE genes: 221
+get_de_genes: Dendritic cells found DE genes: 524
+get_de_genes: Endothelial cells found DE genes: 699
+get_de_genes: Epithelial cells found DE genes: 292
+get_de_genes: Granulocytes found DE genes: 327
+get_de_genes: Macrophages found DE genes: 395
+get_de_genes: Mast Cells found DE genes: 309
+get_de_genes: Monocytes found DE genes: 345
+get_de_genes: Neutrophils found DE genes: 466
+get_de_genes: NK cells found DE genes: 326
+get_de_genes: Stromal cells found DE genes: 466
+get_de_genes: T cells found DE genes: 368
+get_de_genes: total DE genes: 2864
+create.RCTD.replicates: creating RCTD for replicate 2
+create.RCTD: getting regression differentially expressed genes: 
+get_de_genes: B cells found DE genes: 66
+get_de_genes: Dendritic cells found DE genes: 228
+get_de_genes: Endothelial cells found DE genes: 361
+get_de_genes: Epithelial cells found DE genes: 152
+get_de_genes: Granulocytes found DE genes: 125
+get_de_genes: Macrophages found DE genes: 146
+get_de_genes: Mast Cells found DE genes: 156
+get_de_genes: Monocytes found DE genes: 129
+get_de_genes: Neutrophils found DE genes: 288
+get_de_genes: NK cells found DE genes: 121
+get_de_genes: Stromal cells found DE genes: 272
+get_de_genes: T cells found DE genes: 188
+get_de_genes: total DE genes: 1647
+create.RCTD: getting platform effect normalization differentially expressed genes: 
+get_de_genes: B cells found DE genes: 222
+get_de_genes: Dendritic cells found DE genes: 522
+get_de_genes: Endothelial cells found DE genes: 701
+get_de_genes: Epithelial cells found DE genes: 291
+get_de_genes: Granulocytes found DE genes: 328
+get_de_genes: Macrophages found DE genes: 395
+get_de_genes: Mast Cells found DE genes: 312
+get_de_genes: Monocytes found DE genes: 347
+get_de_genes: Neutrophils found DE genes: 468
+get_de_genes: NK cells found DE genes: 329
+get_de_genes: Stromal cells found DE genes: 464
+get_de_genes: T cells found DE genes: 368
+get_de_genes: total DE genes: 2868
+           used  (Mb) gc trigger   (Mb)  max used   (Mb)
+Ncells  3366271 179.8    5026611  268.5   5026611  268.5
+Vcells 25437656 194.1  427245005 3259.7 532535040 4063.0
+run.RCTD.replicates: running RCTD for replicate 1
+fitBulk: decomposing bulk
+chooseSigma: using initial Q_mat with sigma =  1
+Likelihood value: 386580.64632784
+Sigma value:  0.88
+Likelihood value: 386093.407050147
+Sigma value:  0.86
+Likelihood value: 386063.714569282
+Sigma value:  0.84
+Likelihood value: 386048.963784922
+Sigma value:  0.84
+run.RCTD.replicates: running RCTD for replicate 2
+fitBulk: decomposing bulk
+chooseSigma: using initial Q_mat with sigma =  1
+Likelihood value: 443057.759851225
+Sigma value:  0.9
+Likelihood value: 442982.269541804
+Sigma value:  0.92
+Likelihood value: 442960.300237172
+Sigma value:  0.92
+Saved RCTD result to: /data/projects/punim2394/lung_curio_mouse_pr8/OlliesFluRevisionCode/RCTD/Day4mouseRCTDoutmin30_multi
+Finished: 2026-07-28T18:30:50+10:00
+Job ID           : 28239254
+Cluster          : spartan
+User/Project     : czhu3869/punim2394
+Nodes            : 1
+Wall-clock time  : 00:38:31 / 31-00:00:00
+
+Displaying overall resources usage from 2026-07-28 17:52:19 to 2026-07-28 18:30:50:
+
+NODE            CPU#        TOT%   ( USR   / SYS   / WIO   / IDLE  ) 
+
+spartan-bm031 : 
+                CPU# 1    : 99.6   (  98.2 /   1.4 /   0.0 /   0.4 ) 
+
+
+Allocated CPUs            : 1    
+  CPUs with usage <25%    : 0    
+  CPUs with usage <50%    : 0    
+  CPUs with usage >50%    : 1    
+
+Memory used (RAM)         : 1.4%  [4649MB of 322123MB]
+
+--------------------------------------------
+

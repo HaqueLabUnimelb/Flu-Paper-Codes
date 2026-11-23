@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Run day-4 RCTD in full doublet mode. This is a 300 GB SLURM job.
+# Run day-4 RCTD (doublet_mode = "full"). The original run used 4.5 GiB of the 300 GB requested.
 
 #SBATCH --partition=long
 #SBATCH --nodes=1
@@ -18,8 +18,26 @@ if [[ -z "${SLURM_JOB_ID:-}" ]]; then
   exit 1
 fi
 
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-repo_dir=$(cd -- "${script_dir}/../.." && pwd)
+# The repository: FLU_REPO_DIR when set; else the checkout that holds this file (run as "bash <file>"); else,
+# under sbatch, which runs a copy of this file, the directory the job was submitted from.
+script_rel=scripts/03_rctd
+script_name=mouseDay4RCTD_full_v2.sh
+here=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." 2>/dev/null && pwd || true)
+if [[ -n "${FLU_REPO_DIR:-}" ]]; then
+  repo_dir=$(cd -- "${FLU_REPO_DIR}" && pwd)
+  if [[ ! -f "${repo_dir}/${script_rel}/${script_name}" ]]; then
+    echo "FLU_REPO_DIR is not this repository: ${repo_dir}" >&2
+    exit 1
+  fi
+elif [[ -n "${here}" && -f "${here}/${script_rel}/${script_name}" ]]; then
+  repo_dir=${here}
+elif [[ -n "${SLURM_SUBMIT_DIR:-}" && -f "${SLURM_SUBMIT_DIR}/${script_rel}/${script_name}" ]]; then
+  repo_dir=$(cd -- "${SLURM_SUBMIT_DIR}" && pwd)
+else
+  echo "Repository not found: submit from the root of the repository or set FLU_REPO_DIR." >&2
+  exit 1
+fi
+script_dir="${repo_dir}/${script_rel}"
 config_file=${FLU_CONFIG:-"${repo_dir}/config/paths.env"}
 
 if [[ -f "${config_file}" ]]; then
@@ -32,9 +50,11 @@ fi
 env_prefix=${FLU_R_ENV_PREFIX:-"${repo_dir}/environment/rctd_spacexr_2.2"}
 r_script="${script_dir}/RCTD_flu_d4_multi_spacexr2.2.R"
 
-if type module >/dev/null 2>&1; then
+# The original runs loaded the cluster's Anaconda module (FLU_ANACONDA_MODULE in config/paths.env); the R
+# environment runs without it.
+if [[ -n "${FLU_ANACONDA_MODULE:-}" ]] && type module >/dev/null 2>&1; then
   module purge
-  module load "${FLU_ANACONDA_MODULE:-Anaconda3/2024.02-1}"
+  module load "${FLU_ANACONDA_MODULE}"
 fi
 
 if [[ ! -x "${env_prefix}/bin/Rscript" ]]; then

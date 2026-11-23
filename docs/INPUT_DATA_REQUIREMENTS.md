@@ -1,76 +1,39 @@
-# Input data requirements
+# Input data
+
+No data are in this repository. Where each input is: [`../data/README.md`](../data/README.md); how it was made:
+[`PROVENANCE.md`](PROVENANCE.md).
 
 ## Spatial Seurat objects
 
-The feature-plot script expects:
+| Sample | Day | RCTD input (GEO GSE341918) | Feature-plot input |
+|---|---|---|---|
+| mouse1 | 4 | `lungST_2_2_QCed_edit.rds` | `lungST_2_2_QCed.rds` |
+| mouse2 | 4 | `lungST_2_3_QCed_edit.rds` | `lungST_2_3_QCed.rds` |
+| mouse4 | 10 | `lungST_4_2_QCed_edit.rds` | `lungST_4_2_QCed.rds` |
+| mouse5 | 10 | `lungST_4_3_QCed_edit.rds` | `lungST_4_3_QCed.rds` |
 
-| Sample label | Time point | Filename |
-|---|---|---|
-| mouse1 | day 4 | `lungST_2_2_QCed.rds` |
-| mouse2 | day 4 | `lungST_2_3_QCed.rds` |
-| mouse4 | day 10 | `lungST_4_2_QCed.rds` |
-| mouse5 | day 10 | `lungST_4_3_QCed.rds` |
-
-The RCTD scripts expect corresponding files with `_edit` before the extension.
-Each object must contain an RNA assay and a two-dimensional `SPATIAL`
-reduction. These requirements are derived from code access, not from a
-biological review of the objects.
+Each object has an `RNA` assay with counts and a two-dimensional `SPATIAL` reduction. The two sets come from
+the same preprocessing run and differ in the beads kept (bead numbers in [`PROVENANCE.md`](PROVENANCE.md)).
+GEO adds the sample accession to the file names (`GSM9920041_lungST_2_2_QCed_edit.rds`); remove it, or give the
+paths in `config/paths.env`.
 
 ## Single-cell reference
 
-`PR8_ref.rds` must be a Seurat object containing:
+`PR8_ref.rds` is a Seurat object with RNA counts and the metadata columns `timepoint_ref` (`4dpi`, `10dpi`) and
+`Annotation_relabel` (cell type). It holds 17,826 cells of GEO GSE202325 (3 days after infection) and
+GSE184384 (5, 9 and 11 days after infection); composition in [`PROVENANCE.md`](PROVENANCE.md).
 
-- `timepoint_ref`, including `4dpi` and `10dpi`;
-- `Annotation_relabel`, used as the cell-type annotation;
-- RNA count data compatible with the spatial objects.
+## Revision analyses
 
-The reference object is not included.
+- Fisher's exact test: three text files with one gene per line (background list, list 1, list 2).
+- RCTD cell-type maps and mode comparison: the day-4 result `Day4mouseRCTDoutmin30_multi.rds` of
+  `scripts/03_rctd/`; the comparison also reads the doublet-mode result written by `run_same_input_doublet.R`.
+- Comparison with the earlier result: the doublet-mode object `Day4mouseRCTDoutmin30_editv1`.
 
-## Revision-analysis inputs
+## Curio Seeker
 
-The Fisher overlap script expects three text files:
-
-- a background universe containing every gene that could have been selected;
-- gene list 1;
-- gene list 2.
-
-The first column is read without a header. Identifiers are trimmed and
-deduplicated. Every gene in either tested list must occur in the universe.
-
-The primary RCTD revision workflow expects the day-4 full-mode
-`RCTD.replicates` object produced by `scripts/03_rctd/`. The doublet rerun
-creates a second object from those same fitted inputs. The comparison script
-requires both objects and assumes identical replicate and spot ordering.
-
-The optional legacy comparison additionally requires an older day-4
-doublet-mode object. That object was generated from a non-identical spot set or
-preprocessing path and is not included. The legacy workflow is provided for
-provenance, not as the preferred mode-sensitivity analysis.
-
-## Curio Seeker inputs
-
-Preprocessing and viral mapping require:
-
-- an external Curio Seeker workflow containing `main.nf`;
-- a workflow-compatible CSV samplesheet;
-- a Nextflow configuration file;
-- the relevant host or viral reference resources;
-- container images retrievable by the configured Singularity profile.
-
-The meaning expected by Curio Seeker's `--igenomes_base` option could not be
-verified from the supplied launch scripts alone. Configure it according to the
-matching Curio Seeker version.
-
-## Availability
-
-Four QCed feature-plot RDS inputs and the single-cell reference existed during
-the technical audit. The four edited RCTD spatial inputs were not found at the
-paths recorded in the supplied scripts, although existing day-4 and day-10 RCTD
-result objects were found. The viral-mapping samplesheets recorded by the
-scripts were not found.
-
-The associated dataset has been deposited in NCBI GEO under Series accession
-[GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918).
-Users should confirm which required local inputs are represented in the deposit
-and whether the record has been publicly released. No data files are committed
-to GitHub.
+Preprocessing and viral mapping need the Curio Seeker workflow (`main.nf`), a samplesheet, a Nextflow
+configuration, the reference folder given as `--igenomes_base` (it holds one sub-folder per genome key of the
+samplesheet) and the container image of the workflow. The samplesheets and configurations of the original runs
+are in `original_scripts/01_preprocessing/` and `original_scripts/04_viral_mapping/`; the FASTQ files are in
+the SRA records of GSE341918.

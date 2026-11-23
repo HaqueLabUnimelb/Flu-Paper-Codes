@@ -1,0 +1,5 @@
+sample_id	day	spots	segments_present	zero_spots	positive_spots	positive_percent	median_raw_umi	p90_raw_umi	p99_raw_umi	max_raw_umi
+2_2	Day 4	31666	8	7862	23804	75.1721088865029	2	8	33	451
+2_3	Day 4	29053	8	7803	21250	73.1421884142774	2	9	55	681
+4_2	Day 10	16098	8	16078	20	0.124239035905081	0	0	0	3
+4_3	Day 10	12517	5	12504	13	0.103858752097148	0	0	0	2

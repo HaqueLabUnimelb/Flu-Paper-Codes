@@ -19,8 +19,26 @@ if [[ -z "${SLURM_JOB_ID:-}" ]]; then
   exit 1
 fi
 
-script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-repo_dir=$(cd -- "${script_dir}/../.." && pwd)
+# The repository: FLU_REPO_DIR when set; else the checkout that holds this file (run as "bash <file>"); else,
+# under sbatch, which runs a copy of this file, the directory the job was submitted from.
+script_rel=scripts/01_preprocessing
+script_name=lung_curioseeker_qc.sh
+here=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." 2>/dev/null && pwd || true)
+if [[ -n "${FLU_REPO_DIR:-}" ]]; then
+  repo_dir=$(cd -- "${FLU_REPO_DIR}" && pwd)
+  if [[ ! -f "${repo_dir}/${script_rel}/${script_name}" ]]; then
+    echo "FLU_REPO_DIR is not this repository: ${repo_dir}" >&2
+    exit 1
+  fi
+elif [[ -n "${here}" && -f "${here}/${script_rel}/${script_name}" ]]; then
+  repo_dir=${here}
+elif [[ -n "${SLURM_SUBMIT_DIR:-}" && -f "${SLURM_SUBMIT_DIR}/${script_rel}/${script_name}" ]]; then
+  repo_dir=$(cd -- "${SLURM_SUBMIT_DIR}" && pwd)
+else
+  echo "Repository not found: submit from the root of the repository or set FLU_REPO_DIR." >&2
+  exit 1
+fi
+script_dir="${repo_dir}/${script_rel}"
 config_file=${FLU_CONFIG:-"${repo_dir}/config/paths.env"}
 
 if [[ -f "${config_file}" ]]; then

@@ -11,3 +11,6 @@
 *.tif binary
 *.tiff binary
 *.pdf binary
+# Archived files are stored exactly as they are: no line-ending conversion.
+original_scripts/** -text
+figures/generated/** -text

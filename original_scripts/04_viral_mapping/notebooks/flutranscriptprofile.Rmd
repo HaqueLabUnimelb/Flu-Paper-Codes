@@ -1,0 +1,265 @@
+---
+title: "HKx31 and SARSCOV2 genome mapping to PR8"
+output: html_document
+date: "2025-12-18"
+---
+
+```{r}
+library(Seurat)
+library(ggplot2)
+library(patchwork)
+library(dplyr)
+library(tidyverse)
+library(dbscan)
+library(reticulate)
+library(cowplot)
+library(reshape2)
+
+```
+
+
+```{r}
+slice22 <- readRDS("/data/projects/punim2394/curioseeker_v3.1.0/result_day4/OUTPUT/lungST_2.2/lungST_2.2_seurat.rds")
+slice23 <- readRDS("/data/projects/punim2394/curioseeker_v3.1.0/result_day4/OUTPUT/lungST_2.3/lungST_2.3_seurat.rds")
+
+```
+
+```{r}
+# viral features you care about
+iav_genes <- c('HA', 'NP', 'NA', 'PB1', 'PB2', 'PA', 'NEP', 'NS1', 'M1', 'M2')
+
+# helper: add any missing features as all-zero rows (so colSums won't error)
+add_zero_genes <- function(obj, genes, assay = "RNA") {
+  counts <- obj[[assay]]@counts
+  missing <- setdiff(genes, rownames(counts))
+  if (length(missing) > 0) {
+    zero_block <- Matrix::Matrix(0, nrow = length(missing), ncol = ncol(counts), sparse = TRUE)
+    rownames(zero_block) <- missing
+    colnames(zero_block) <- colnames(counts)
+    counts <- rbind(counts, zero_block)
+    obj[[assay]] <- CreateAssayObject(counts = counts)
+  }
+  obj
+}
+
+## ---- slice22 ----
+slice22 <- add_zero_genes(slice22, iav_genes, assay = "RNA")
+
+slice22$infection <- FALSE
+slice22$infection_counts <- Matrix::colSums(slice22[['RNA']]@counts[iav_genes, , drop = FALSE])
+slice22$infection[slice22$infection_counts > 0] <- TRUE
+
+## ---- slice23 ----
+slice23 <- add_zero_genes(slice23, iav_genes, assay = "RNA")
+
+slice23$infection <- FALSE
+slice23$infection_counts <- Matrix::colSums(slice23[['RNA']]@counts[iav_genes, , drop = FALSE])
+slice23$infection[slice23$infection_counts > 0] <- TRUE
+
+```
+
+```{r}
+##slice22
+FeaturePlot(slice22, feature = 'HA', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice22, feature = 'NA', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice22, feature = 'NP', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice22, feature = 'PA', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice22, feature = 'PB1', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice22, feature = 'PB2', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice22, feature = 'NS2', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice22, feature = 'NS1', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice22, feature = 'M1', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice22, feature = 'M2', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+```
+
+```{r}
+##slice23
+FeaturePlot(slice23, feature = 'HA', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice23, feature = 'NA', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice23, feature = 'NP', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice23, feature = 'PA', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice23, feature = 'PB1', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice23, feature = 'PB2', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice23, feature = 'NS2', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice23, feature = 'NS1', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice23, feature = 'M1', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+
+FeaturePlot(slice23, feature = 'M2', reduction = 'SPATIAL') +
+  coord_fixed() + theme(line=element_blank(), axis.text=element_blank(), axis.title=element_blank()) +
+  scale_colour_viridis_c(option='magma', direction=-1)
+```
+
+```{r}
+slice22 <- readRDS("/data/projects/punim2394/curioseeker_v3.1.0/result_day4_10_covid/OUTPUT/lungST_2.2/lungST_2.2_seurat.rds")
+slice23 <- readRDS("/data/projects/punim2394/curioseeker_v3.1.0/result_day4_10_covid/OUTPUT/lungST_2.3/lungST_2.3_seurat.rds")
+
+```
+
+```{r}
+# SARS-CoV-2 “tripwire” features
+sars2_genes <- c("N", "M", "S", "E", "ORF7a")
+
+# helper: add any missing features as all-zero rows (so colSums won't error)
+add_zero_genes <- function(obj, genes, assay = "RNA") {
+  counts <- obj[[assay]]@counts
+  missing <- setdiff(genes, rownames(counts))
+  if (length(missing) > 0) {
+    zero_block <- Matrix::Matrix(0, nrow = length(missing), ncol = ncol(counts), sparse = TRUE)
+    rownames(zero_block) <- missing
+    colnames(zero_block) <- colnames(counts)
+    counts <- rbind(counts, zero_block)
+    obj[[assay]] <- CreateAssayObject(counts = counts)
+  }
+  obj
+}
+
+## ---- slice22 ----
+slice22 <- add_zero_genes(slice22, sars2_genes, assay = "RNA")
+
+slice22$sars2_negative <- TRUE
+slice22$sars2_counts <- Matrix::colSums(slice22[["RNA"]]@counts[sars2_genes, , drop = FALSE])
+slice22$sars2_negative[slice22$sars2_counts > 0] <- FALSE
+
+## ---- slice23 ----
+slice23 <- add_zero_genes(slice23, sars2_genes, assay = "RNA")
+
+slice23$sars2_negative <- TRUE
+slice23$sars2_counts <- Matrix::colSums(slice23[["RNA"]]@counts[sars2_genes, , drop = FALSE])
+slice23$sars2_negative[slice23$sars2_counts > 0] <- FALSE
+```
+```{r}
+## ---- slice22 : SARS-CoV-2 negative-control features ----
+
+FeaturePlot(slice22, feature = "N", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice22, feature = "M", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice22, feature = "S", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice22, feature = "E", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice22, feature = "ORF7a", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+```
+
+
+```{r}
+## ---- slice23 : SARS-CoV-2 negative-control features ----
+
+FeaturePlot(slice23, feature = "N", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice23, feature = "M", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice23, feature = "S", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice23, feature = "E", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+FeaturePlot(slice23, feature = "ORF7a", reduction = "SPATIAL") +
+  coord_fixed() +
+  theme(line = element_blank(),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  scale_colour_viridis_c(option = "magma", direction = -1, begin = 0.99, end = 0.99)
+
+```
+

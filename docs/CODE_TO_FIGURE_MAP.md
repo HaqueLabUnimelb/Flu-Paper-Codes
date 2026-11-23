@@ -1,28 +1,31 @@
-# Code-to-figure map
+# Scripts and their outputs
 
-No manuscript figure numbers were present in the supplied scripts, and no
-figure-to-panel mapping was provided. The table records direct, code-supported
-output relationships plus the authors' section assignment for the two viral
-transcript PNG files whose plotting source script was not supplied.
+Every file of `figures/generated/` with the script that wrote it, its original location, date and checksum is
+listed in [`FIGURE_MANIFEST.tsv`](FIGURE_MANIFEST.tsv). The files are the outputs of the original runs,
+unchanged.
 
-| Code section | Generated output | Repository status | Manuscript mapping |
-|---|---|---|---|
-| `FeaturePlots_Flu.R`: spatial QC | `mouse1_umis.jpeg`, `mouse2_umis.jpeg`, `mouse4_umis.jpeg`, `mouse5_umis.jpeg` | 4 files included under `figures/generated/feature_plots/` | Unresolved |
-| `FeaturePlots_Flu.R`: cytokine feature plots | Explicitly saved `mouse*_GENE.jpeg` cytokine plots | 27 files included under `figures/generated/feature_plots/` | Unresolved |
-| `FeaturePlots_Flu.R`: B-cell-associated features | Explicitly saved `Igkc`, `Ighm`, and selected `Ighg2c` plots | 11 files included under `figures/generated/feature_plots/` | Unresolved |
-| `RCTD_flu_vis.R`: cell-type overlay | Interactive plot; optional configured output | No existing, explicitly attributable file was found | Unresolved |
-| Revision RCTD individual cell-type plots | One PNG per cell type and day-4 replicate plus a CSV summary | Code included; generated outputs not archived | Reviewer follow-up; mapping unresolved |
-| Revision RCTD same-input mode comparison | Six PNG summaries, CSV metrics and `reviewer_summary.md` | Code included; generated outputs not archived | Reviewer follow-up; mapping unresolved |
-| Revision Fisher gene-list overlap | TSV statistics only; no direct figure | Code included; result not archived | No direct figure output |
-| Plotting source script not supplied: PR8 viral transcript mapping | `PR8_viral_gene_expression_2_2.png` and `PR8_viral_gene_expression_2_3.png` | 2 author-identified files included under `figures/generated/viral_transcript_mapping/` | Unresolved |
+| Script (`original_scripts/`) | Output | In `figures/generated/` |
+|---|---|---|
+| `02_feature_plots/FeaturePlots_Flu_2026-07-01.R` | detected genes per bead (`mouse*_umis.jpeg`, 4 files); Tnf, Ifng, Il6, Ifnb1, Cxcl1, Il10, Il1b (27 files); Igkc, Ighm, Ighg2c (11 files) | `feature_plots/` (42) |
+| `02_feature_plots/FeaturePlots_Flu.R` | violin plot per sample of Il1b, Il6, Cxcl1, Tnf, Ifng, Ifnb1, Il10 | `violin_plots/` (7) |
+| `02_feature_plots/FeaturePlots_Flu.R` | the same seven genes on the tissue, beads without counts in grey | `feature_plots_v2/` (27) |
+| `06_viral_expression/assess_pr8_viral_expression.R` | PR8 counts per bead on the tissue, four samples; summary tables | `viral_transcript_mapping/` (4); `viral_expression/pr8_*`, `README_results.txt` |
+| `06_viral_expression/plot_day4_rctd_infected_spots.R` | PR8-positive beads per cell type, day 4 | `viral_expression/Day4_RCTD_celltype_infection_*`, `README_Day4_RCTD_celltype_infection.txt` |
+| `06_viral_expression/plot_day4_rctd_infected_bar_with_percentage_line.R` | the same as a bar plot with the percentage | `viral_expression/Day4_RCTD_celltype_infected_bar_with_percentage_line.png` |
+| `06_viral_expression/test_day4_pr8_spatial_randomness.R` | spatial clustering of the PR8 signal (Moran's I, join-count test) | `viral_expression/Day4_PR8_*`, `README_Day4_PR8_spatial_randomness.txt` |
+| `06_viral_expression/plot_pr8_8segment_violin.R` | PR8 counts per bead, distribution | `viral_expression/PR8_8segment_*`, `README_PR8_8segment_violin.txt` |
+| `06_viral_expression/plot_day4_rctd_threshold_series.R` | PR8-positive share per cell type at 14 count thresholds | `viral_expression/Day4_RCTD_celltype_raw_UMI_threshold_series.tsv` |
+| `06_viral_expression/plot_threshold_celltype_lineplot.R` | the same at thresholds 1, 2, 5 and 10 as line plots | `viral_expression/Day4_RCTD_infected_percentage_thresholds_*` |
 
-Curio Seeker, RCTD model-fitting, and viral-mapping launchers do not directly
-open a graphics device or save a plot. External pipeline diagnostics were not
-treated as direct outputs of the archived launch scripts.
+Scripts whose outputs are data objects or sets of maps:
 
-All 44 included files were confirmed by exact filename, format, dimensions,
-file size, and checksum. Direct script-to-output provenance is confirmed for the
-42 feature-plot JPEG files. The two PR8 PNG files are assigned to the viral
-transcript mapping section based on author-provided information because their
-plotting source script was not supplied. No manuscript panel assignment is
-inferred.
+| Script | Output |
+|---|---|
+| `01_preprocessing/lung_curioseeker_qc.sh` | Curio Seeker output folder with one Seurat object per sample |
+| `03_rctd/RCTD_flu_d4_multi_spacexr2.2.R`, `RCTD_flu_d10_multi_spacexr2.2.R` | `Day4mouseRCTDoutmin30_multi.rds`, `Day10mouseRCTDoutmin30_multi.rds` |
+| `03_rctd/RCTD_flu_vis.R` | overlay of the T-cell, B-cell and epithelial weights, drawn on screen; written for the earlier doublet-mode results (label `Epithelial Cells`). `scripts/03_rctd/RCTD_flu_vis.R` also reads the full-mode results (label `Epithelial cells`) and saves the plot |
+| `04_viral_mapping/` launchers | Curio Seeker output folders of the X-31 and SARS-CoV-2 runs |
+| `05_revision_analyses/FishersExactTest.R` | the test, printed |
+| `05_revision_analyses/rctd/plot_individual_cell_types.R` | 24 maps (12 cell types, two day-4 replicates) and `cell_type_plot_summary.csv` |
+| `05_revision_analyses/rctd/run_same_input_doublet.R`, `compare_full_vs_doublet.R` | doublet-mode result of the day-4 input; tables, six summary plots and `reviewer_summary.md` of the comparison (results of 23 November 2026 in [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)) |
+| `05_revision_analyses/rctd/legacy_shared_spot_paired_ttest.R` | proportions of the compared beads in both results and the paired t-tests |

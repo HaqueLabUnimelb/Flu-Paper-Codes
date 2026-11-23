@@ -1,17 +1,23 @@
-software_or_package	version	version_status	used_by_script	installation_method	evidence	notes
-Bash	Unknown	Inferred	all .sh	System shell	Shebang and Bash syntax	Current system version was not recorded
-SLURM	Unknown	Inferred	all .sh	Institutional scheduler	#SBATCH directives	Required only for supplied batch wrappers
-Curio Seeker	3.0.0	Inferred	preprocessing and viral mapping	External workflow	Original workflow directory name	Workflow files are not included
-Nextflow	Unknown	Not available in the current environment	preprocessing and viral mapping	External	Explicit nextflow run commands	Command was not on PATH during validation
-Singularity-compatible runtime	Unknown	Inferred	preprocessing and viral mapping	External	Nextflow profile singularity	Could be Singularity or a compatible runtime
-R	4.3.3	Confirmed	all .R	Conda	sessionInfo() from the existing RCTD environment	RCTD wrappers require R 4.3.x
-Seurat	5.1.0	Confirmed	all .R	Conda	sessionInfo() and wrapper version check	Exact RCTD version enforced
-SeuratObject	5.2.0	Confirmed	RCTD scripts	Conda	sessionInfo()	Loaded with Seurat
-spacexr	2.2.0	Confirmed	RCTD and visualization	Verified source archive	sessionInfo() and wrapper version check	Recorded source commit and SHA-256 are in README
-Matrix	1.6-5	Confirmed	RCTD scripts	Conda	sessionInfo()	Used through Matrix::colSums
-ggplot2	3.5.2	Confirmed	feature plots and RCTD visualization	Conda	sessionInfo()	Loaded through Seurat/tidyverse
-data.table	1.17.8	Confirmed	feature plots and RCTD visualization	Conda	sessionInfo()	Loaded explicitly by plotting scripts
-tidyverse	Unknown	Not available in the current environment	feature plots and RCTD visualization	Unknown	library(tidyverse) in scripts	Required runtime version unresolved
-mltools	Unknown	Not available in the current environment	feature plots and RCTD visualization	Unknown	library(mltools) in scripts	Required runtime version unresolved
-Anaconda3 module	2024.02-1	Confirmed	RCTD SLURM wrappers	HPC module	Original wrapper module load	Site-specific
-my-job-stats	Unknown	Unknown	all .sh	Optional site utility	Original scripts	Optional in public wrappers
+software	version	used_by	recorded_in
+Curio Seeker	2.0.0	preprocessing (step 1)	container and pipeline folder named in original_scripts/01_preprocessing/slurm-1634899.out
+Nextflow	23.10.1	preprocessing (step 1)	original_scripts/01_preprocessing/slurm-1634899.out
+Curio Seeker	3.1.0	mapping to X-31 and SARS-CoV-2 references (step 4)	pipeline manifest in original_scripts/04_viral_mapping/*/slurm-*.out
+Nextflow	23.04.2	mapping to X-31 and SARS-CoV-2 references (step 4)	original_scripts/04_viral_mapping/*/slurm-*.out
+Apptainer	1.4.4	mapping to X-31 and SARS-CoV-2 references (step 4)	original_scripts/04_viral_mapping/*/lung_curioseeker_*.slurm
+STAR	2.6.1d	genome indices of the Curio Seeker references	original_scripts/04_viral_mapping/reference/reference.slurm
+R	4.3.3	RCTD, revision RCTD analyses, PR8 expression (steps 3, 5, 6)	original_scripts/03_rctd/logs/; original_scripts/06_viral_expression/sessionInfo.txt
+Seurat	5.1.0	RCTD, PR8 expression (steps 3, 6)	original_scripts/03_rctd/logs/; original_scripts/06_viral_expression/sessionInfo.txt
+SeuratObject	5.2.0	RCTD, PR8 expression (steps 3, 6)	environment/sessionInfo.txt
+spacexr	2.2.0 (github.com/dmcable/spacexr, commit 205c9ac)	RCTD and revision RCTD analyses (steps 3, 5)	original_scripts/03_rctd/logs/; original_scripts/03_rctd/setup_spacexr2.2.sh
+Matrix	1.6-5	RCTD (step 3)	environment/sessionInfo.txt
+ggplot2	3.5.2	revision RCTD analyses, PR8 expression (steps 5, 6)	environment/sessionInfo.txt
+data.table	1.17.8	RCTD environment	environment/sessionInfo.txt
+R	4.3.1	feature plots (step 2): versions that reproduce the 42 archived JPEG files byte for byte	docs/REPRODUCIBILITY.md
+Seurat	4.3.0.1	feature plots (step 2)	docs/REPRODUCIBILITY.md
+SeuratObject	4.1.3	feature plots (step 2)	docs/REPRODUCIBILITY.md
+ggplot2	3.5.0	feature plots (step 2)	docs/REPRODUCIBILITY.md
+tidyverse	2.0.0	feature plots (step 2)	docs/REPRODUCIBILITY.md
+data.table	1.14.8	feature plots (step 2)	docs/REPRODUCIBILITY.md
+mltools	0.3.5	feature plots (step 2)	docs/REPRODUCIBILITY.md
+spacexr	2.2.1	feature plots (step 2), loaded by the script	docs/REPRODUCIBILITY.md
+SLURM	cluster scheduler	all .sh and .slurm files	#SBATCH lines

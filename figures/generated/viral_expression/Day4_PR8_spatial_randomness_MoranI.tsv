@@ -1,0 +1,3 @@
+sample_id	spots	knn_k	undirected_edges	library_depth_strata	permutations	observed_moran_i_log1p	null_mean_moran_i	null_sd_moran_i	moran_z	permutation_p_upper	permutation_p_Bonferroni_2_samples
+2_2	31666	6	109381	10	1999	0.347998526933785	0.101043158130294	0.00357231558793224	69.1303337358376	5e-04	0.001
+2_3	29053	6	100529	10	1999	0.496850298078362	0.108941011833252	0.00374262220612544	103.646391455229	5e-04	0.001

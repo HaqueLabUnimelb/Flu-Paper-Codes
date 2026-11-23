@@ -1,191 +1,83 @@
 # Flu Paper Codes
 
-**AI-assisted reproduction:** [Open the Codex reproduction prompt](PROMPTS/CODEX_REPRODUCTION_PROMPT.md)
+Analysis code for the spatial transcriptomics (Curio Seeker) of mouse lungs 4 and 10 days after intranasal
+infection with influenza A/PR8 (PR8-OVA), GEO series
+[GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918), "Dual host-pathogen screening of the
+lung during severe influenza using spatial transcriptomics" (Haque Lab, University of Melbourne).
 
-**Data availability:** The associated dataset has been deposited in NCBI GEO
-under Series accession [GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918).
+```mermaid
+flowchart TB
+    A["Curio Seeker preprocessing<br>mouse + PR8 reference"] --> B["Spatial Seurat objects of the four lungs<br>RCTD inputs on GEO GSE341918"]
+    B --> C["Feature plots and violin plots"]
+    S["Single-cell reference<br>GSE202325 + GSE184384"] -->|reference| D
+    B --> D["RCTD cell-type weights<br>spacexr 2.2.0, full mode"]
+    D --> E["Cell-type maps,<br>full mode against doublet mode"]
+    B --> F["PR8 transcripts per bead:<br>maps, cell types, spatial pattern"]
+    H["Curio Seeker<br>mouse + X-31 or SARS-CoV-2 reference"] --> I["Mapping to other viral references"]
+```
 
-## Overview
+## Contents
 
-This repository archives analysis scripts associated with a flu manuscript
-revision. It provides code for Curio Seeker preprocessing, spatial feature
-plots, RCTD cell-type mapping, RCTD visualization, and viral-reference mapping.
-It also contains a revision-analysis module for gene-list overlap testing,
-individual RCTD cell-type maps, and a same-input comparison of full versus
-doublet RCTD modes. The repository does not contain raw data, processed RDS
-objects, reference genomes, or Curio Seeker itself. It includes 44 recovered
-image outputs: 42
-JPEG files that match explicit saves in the spatial feature-plot script and two
-author-identified PR8 viral transcript mapping PNG files.
-
-Full execution requires the input datasets and reference resources described in
-[Input data requirements](docs/INPUT_DATA_REQUIREMENTS.md). The scripts were
-syntax-checked but were not rerun in full because the workflows require
-project data, external references, specialized software, and HPC resources.
-This repository should therefore be described as a code archive with
-reproduction guidance, not as a fully self-contained reproducibility package.
-
-## Workflow
-
-1. Run Curio Seeker preprocessing for the spatial-transcriptomics samples.
-2. Generate spatial quality-control and gene-expression feature plots.
-3. Run day-4 and day-10 RCTD as independent large-memory jobs.
-4. Inspect an RCTD result with the visualization script.
-5. Run HKx31 or SARS-CoV-2 reference mapping when the corresponding
-   samplesheets and references are available.
-6. Run reviewer-specific gene-overlap and RCTD mode-sensitivity analyses.
-
-See [Analysis workflow](docs/ANALYSIS_WORKFLOW.md) for details.
-
-## Repository structure
-
-| Path | Contents |
+| Folder | What it holds |
 |---|---|
-| `scripts/01_preprocessing/` | Curio Seeker preprocessing SLURM script |
-| `scripts/02_feature_plots/` | Spatial feature-plot R script |
-| `scripts/03_rctd/` | Day-4/day-10 RCTD scripts and visualization |
-| `scripts/04_viral_mapping/` | HKx31 and SARS-CoV-2 mapping scripts |
-| `scripts/05_revision_analyses/` | Gene-list overlap and RCTD reviewer follow-up analyses |
-| `config/` | Example path and sample configuration |
-| `environment/` | Confirmed and inferred dependency information |
-| `docs/` | Workflow, provenance, changes, and troubleshooting |
-| `data/` | Input-placement guidance; no data are committed |
-| `tests/` | Lightweight repository validation |
-| `PROMPTS/` | Standalone Codex reproduction prompt |
+| [`scripts/`](scripts) | The main steps with all paths taken from one configuration file |
+| [`original_scripts/`](original_scripts) | The files of the original analysis as they are on the cluster, byte for byte, with run logs; origin and md5 of each in [`MANIFEST.tsv`](original_scripts/MANIFEST.tsv) |
+| [`figures/generated/`](figures) | 107 output figures and tables of the original runs, with checksums |
+| [`environment/`](environment) | Software versions and the conda environment of the RCTD runs |
+| [`docs/`](docs) | [`PROVENANCE.md`](docs/PROVENANCE.md): data, runs, references and versions; [`CODE_TO_FIGURE_MAP.md`](docs/CODE_TO_FIGURE_MAP.md); [`REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md): test results |
+| [`config/`](config), [`tests/`](tests) | Configuration templates; a check of the repository that needs no data |
 
-## Code-to-analysis and output map
+## Analyses
 
-| Analysis | Main script | Expected inputs | Expected outputs | Figure mapping |
-|---|---|---|---|---|
-| Curio Seeker preprocessing | `scripts/01_preprocessing/lung_curioseeker_qc.sh` | Curio Seeker workflow, samplesheet, reference configuration | Curio Seeker output directory | No direct figure output |
-| Spatial feature plots | `scripts/02_feature_plots/FeaturePlots_Flu.R` | Four QCed Seurat RDS objects | JPEG QC and expression plots | Manuscript figure numbers unresolved |
-| Day-4 RCTD **(300 GB HPC job)** | `scripts/03_rctd/RCTD_flu_d4_multi_spacexr2.2.R` via `mouseDay4RCTD_full_v2.sh` | PR8 reference and two edited day-4 Seurat RDS objects | `Day4mouseRCTDoutmin30_multi.rds` | No direct figure output |
-| Day-10 RCTD **(300 GB HPC job)** | `scripts/03_rctd/RCTD_flu_d10_multi_spacexr2.2.R` via `mouseDay10RCTD_full_v3.sh` | PR8 reference and two edited day-10 Seurat RDS objects | `Day10mouseRCTDoutmin30_multi.rds` | No direct figure output |
-| RCTD visualization | `scripts/03_rctd/RCTD_flu_vis.R` | Multi-replicate RCTD RDS result | Interactive plot; optional file when configured | Manuscript figure number unresolved |
-| Gene-list overlap | `scripts/05_revision_analyses/FishersExactTest.R` | Background universe and two gene lists | Fisher test TSV summary | Reviewer follow-up; panel mapping unresolved |
-| Day-4 RCTD mode sensitivity | `scripts/05_revision_analyses/rctd/run_same_input_doublet.R` and `compare_full_vs_doublet.R` | Day-4 full-mode RCTD object | Same-input doublet RDS, comparison tables and plots | Reviewer follow-up; panel mapping unresolved |
-| PR8 viral transcript mapping figures | Plotting source script not supplied | Existing author-identified viral gene-expression outputs | Two archived PNG files | Manuscript figure numbers unresolved |
-| HKx31 mapping | `scripts/04_viral_mapping/lung_curioseeker_HKx31genomemapping.sh` | Curio Seeker workflow, HKx31 samplesheet and references | Configured Nextflow output directory | No direct figure output |
-| SARS-CoV-2 mapping | `scripts/04_viral_mapping/lung_curioseeker_SARSCOV2genomemapping.sh` | Curio Seeker workflow, SARS-CoV-2 samplesheet and references | Configured Nextflow output directory | No direct figure output |
+| Step | `scripts/` | `original_scripts/` | Software |
+|---|---|---|---|
+| 1. Preprocessing | `01_preprocessing/lung_curioseeker_qc.sh` | `01_preprocessing/` | Curio Seeker v2.0.0, Nextflow 23.10.1; mouse mm10 + PR8 reference |
+| 2. Feature plots, violin plots | `02_feature_plots/FeaturePlots_Flu.R` | `02_feature_plots/` (two versions) | the 42 feature plots are reproduced with R 4.3.1, Seurat 4.3.0.1 |
+| 3. RCTD, days 4 and 10 | `03_rctd/` | `03_rctd/` | R 4.3.3, Seurat 5.1.0, spacexr 2.2.0 |
+| 4. Mapping to X-31 and SARS-CoV-2 references | `04_viral_mapping/` | `04_viral_mapping/` | Curio Seeker v3.1.0, Nextflow 23.04.2 |
+| 5. Revision analyses: gene-list overlap, cell-type maps, RCTD modes | `05_revision_analyses/` | `05_revision_analyses/` | R 4.3.3, spacexr 2.2.0 |
+| 6. PR8 transcripts: maps, cell types, spatial pattern | | `06_viral_expression/` | R 4.3.3, Seurat 5.1.0 |
 
-See [CODE_TO_FIGURE_MAP.md](docs/CODE_TO_FIGURE_MAP.md). The recovered outputs
-are archived under
-[figures/generated/feature_plots](figures/generated/feature_plots) and
-[figures/generated/viral_transcript_mapping](figures/generated/viral_transcript_mapping);
-their manuscript panel mapping remains unresolved.
+Settings, SLURM jobs, references and bead numbers of the runs: [`docs/PROVENANCE.md`](docs/PROVENANCE.md).
 
-## Requirements
+## Run
 
-- Linux and Bash
-- SLURM for the supplied batch scripts
-- Nextflow plus a Singularity-compatible runtime for Curio Seeker workflows
-- Curio Seeker workflow files and the relevant reference resources
-- R 4.3.x, Seurat 5.1.0, and spacexr 2.2.0 for RCTD
-- The additional R packages loaded by the plotting scripts
-
-Confirmed, inferred, and unavailable versions are distinguished in
-[environment/README.md](environment/README.md).
-
-## Installation
+1. **Data.** GEO GSE341918 holds the four spatial objects that RCTD reads (`GSM9920041_lungST_2_2_QCed_edit.rds`
+   to `GSM9920044_lungST_4_3_QCed_edit.rds`). The single-cell reference is built from GEO GSE202325 and
+   GSE184384. All inputs and where they come from: [`data/README.md`](data/README.md). No data are in this
+   repository.
+2. **Environment.** RCTD: the conda environment of [`environment/README.md`](environment/README.md), with
+   spacexr 2.2.0. The feature-plot and overlay scripts need Seurat, spacexr, tidyverse, data.table and mltools.
+3. **Configure and run**, from the root of the repository:
 
 ```bash
-git clone https://github.com/HaqueLabUnimelb/Flu-Paper-Codes.git
-cd Flu-Paper-Codes
-conda env create --prefix environment/rctd_spacexr_2.2 --file environment/environment.yml
-```
-
-The environment file prepares the confirmed RCTD dependencies but does not
-install spacexr itself. Install spacexr 2.2.0 from the verified source described
-in [environment/README.md](environment/README.md). Curio Seeker and its
-container images are external requirements.
-
-## Configuration
-
-```bash
-cp config/paths.example.env config/paths.env
-# Edit config/paths.env with local paths; this file is ignored by Git.
-set -a
-source config/paths.env
-set +a
-```
-
-Do not edit scripts to insert institutional paths. Required filenames and
-sample labels are summarized in `config/samples.example.tsv`.
-
-## Example execution
-
-Create the log directory before submitting SLURM scripts:
-
-```bash
+cp config/paths.example.env config/paths.env      # then edit the paths
 mkdir -p logs
-sbatch --account=YOUR_ACCOUNT --partition=YOUR_PARTITION \
-  scripts/01_preprocessing/lung_curioseeker_qc.sh
-
-sbatch --account=YOUR_ACCOUNT --partition=long \
-  scripts/03_rctd/mouseDay4RCTD_full_v2.sh
-sbatch --account=YOUR_ACCOUNT --partition=long \
-  scripts/03_rctd/mouseDay10RCTD_full_v3.sh
-
-Rscript --vanilla scripts/05_revision_analyses/FishersExactTest.R \
-  /path/to/background_genes.txt /path/to/list_1.txt /path/to/list_2.txt \
-  outputs/revision/fisher_gene_overlap.tsv
-sbatch --account=YOUR_ACCOUNT \
-  scripts/05_revision_analyses/rctd/run_same_input_doublet.sh
-
+sbatch --account=YOUR_ACCOUNT --partition=YOUR_PARTITION scripts/03_rctd/mouseDay4RCTD_full_v2.sh
+sbatch --account=YOUR_ACCOUNT --partition=YOUR_PARTITION scripts/03_rctd/mouseDay10RCTD_full_v3.sh
+set -a; source config/paths.env; set +a
 Rscript --vanilla scripts/02_feature_plots/FeaturePlots_Flu.R
-Rscript --vanilla scripts/03_rctd/RCTD_flu_vis.R
+Rscript --vanilla scripts/05_revision_analyses/FishersExactTest.R background.txt list_1.txt list_2.txt out.tsv
 ```
 
-Use site-appropriate accounts and partitions. Never copy an account value from
-another institution. The RCTD scripts request 300 GB RAM and should not be run
-on a login node. More detail is available in
-[HPC execution](docs/HPC_EXECUTION.md).
+   The RCTD fits took 39 and 15 minutes on one CPU and used 4.5 and 7.8 GiB of memory. More commands:
+   [`docs/HPC_EXECUTION.md`](docs/HPC_EXECUTION.md). The files of `original_scripts/` hold the paths of the
+   Spartan cluster (University of Melbourne) and are kept as a record.
 
-## Expected outputs
+## Tested
 
-- Curio Seeker and viral mapping: pipeline-specific files under the configured
-  output directories.
-- Feature plotting: JPEG files under `FLU_FEATURE_PLOT_OUTPUT_DIR`.
-- Archived PR8 viral transcript mapping outputs: two PNG files under
-  `figures/generated/viral_transcript_mapping/`.
-- RCTD: one multi-replicate RDS file per time point under
-  `FLU_RCTD_OUTPUT_DIR`.
-- RCTD visualization: an on-screen plot by default, or a file when
-  `FLU_RCTD_VIS_OUTPUT` is set.
-- Revision analyses: a Fisher-test TSV, individual RCTD cell-type maps, and
-  same-input full-versus-doublet comparison tables and figures under the
-  configured revision output paths.
+The R scripts of `scripts/` and their SLURM wrappers were run on the original data on 23 November 2026 and
+their outputs compared with those of the original runs, or, for the comparison of the RCTD modes, with the
+original script run on the same input; the Curio Seeker launchers were checked by their command line. See
+[`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md).
 
-## Validation and limitations
+## About the files
 
-Run:
+- `original_scripts/` holds the files of the original analysis. `scripts/` holds the same analyses with
+  configurable paths; every difference is listed in [`docs/CHANGES_FROM_ORIGINAL.md`](docs/CHANGES_FROM_ORIGINAL.md).
+- The figures of `figures/generated/` are the files written by the original runs, unchanged.
 
-```bash
-FLU_RSCRIPT=/path/to/Rscript tests/validate_repository.sh
-```
+## Citation and licence
 
-Validation covers repository structure, links, syntax, obvious secret patterns,
-internal paths, raw-data extensions, permissions, and GitHub file-size limits.
-It does not validate biological interpretation or reproduce analytical results.
-See [Reproducibility](docs/REPRODUCIBILITY.md) and the latest
-[validation summary](logs/validation_summary.txt).
-
-## Data and code availability
-
-No raw or processed research data are distributed in this repository. The
-associated dataset has been deposited in NCBI GEO under Series accession
-[GSE341918](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE341918); see
-[data/README.md](data/README.md) for local input requirements and exclusions.
-The public code is available from this GitHub repository under the MIT License.
-
-## Citation
-
-Use [CITATION.cff](CITATION.cff) to cite this software archive. The manuscript
-citation was not available during repository preparation and should be added by
-the authors when confirmed.
-
-## License and contact
-
-Code is released under the [MIT License](LICENSE). For questions or reproducible
-bug reports, open an issue in this GitHub repository. Requests involving data
-access should follow the manuscript's data-availability statement.
+Cite the article of GEO series GSE341918 and this repository ([`CITATION.cff`](CITATION.cff)). The code is
+released under the [MIT License](LICENSE).

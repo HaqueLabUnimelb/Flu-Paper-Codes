@@ -54,6 +54,13 @@ for (i in 1:2) {
   res[[i]] <- map
 }
 
+# The epithelial cell type is labelled "Epithelial Cells" in the doublet-mode results the original script was
+# written for and "Epithelial cells" in the full-mode results; the label of the result that was read is used.
+epithelial <- grep("^epithelial cells$", colnames(res[[1]]), ignore.case = TRUE, value = TRUE)
+if (length(epithelial) != 1L) {
+  stop("The RCTD result has no epithelial cell type column.")
+}
+
 rctd_plot <- ggplot() +
   geom_point(
     data = res[[1]], mapping = aes(x = x, y = y, alpha = `T cells`),
@@ -64,7 +71,7 @@ rctd_plot <- ggplot() +
     color = "red", size = 0.5
   ) +
   geom_point(
-    data = res[[1]], mapping = aes(x = x, y = y, alpha = `Epithelial Cells`),
+    data = res[[1]], mapping = aes(x = x, y = y, alpha = .data[[epithelial]]),
     color = "cyan", size = 0.5
   ) +
   theme_minimal() +

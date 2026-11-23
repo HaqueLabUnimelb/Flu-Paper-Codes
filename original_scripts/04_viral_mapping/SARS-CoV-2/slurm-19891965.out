@@ -1,0 +1,2718 @@
+
+Inactive Modules:
+  1) UCC/1.0.0     2) UCX/1.13.1     3) libfabric/1.15.1
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) XZ/5.2.5          3) hwloc/2.7.1         5) libpciaccess/0.16     7) numactl/2.0.14
+  2) binutils/2.38     4) libevent/2.1.12     6) libxml2/2.9.13
+
+The following have been reloaded with a version change:
+  1) GCCcore/11.3.0 => GCCcore/13.3.0     3) zlib/1.2.12 => zlib/1.3.1
+  2) OpenSSL/1.1 => OpenSSL/3-2024a
+
+N E X T F L O W  ~  version 23.04.2
+Launching `/data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/main.nf` [marvelous_elion] DSL2 - revision: 9a696c40ae
+
+WARN: Found unexpected parameters:
+* --star_ignore_sjdbgtf: false
+* --supply_sjdb_gtf_file: true
+* --build_star_index: false
+* --site_yml_file: /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/bin/_site.yml
+* --style_css_file: /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/bin/style.css
+* --rep_file_ext: /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/bin/htmlrender_extended.Rmd
+* --rep_file: /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/bin/htmlrender.Rmd
+* --star_container: /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/containers/star-v2.6.1d.sif
+* --subread_container: /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/containers/subread-v2.0.8.sif
+* --samtools_container: /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/containers/samtools-v1.15.1.sif
+* --container_dir: /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/containers
+- Ignore this warning: params.schema_ignore_params = "star_ignore_sjdbgtf,supply_sjdb_gtf_file,build_star_index,site_yml_file,style_css_file,rep_file_ext,rep_file,star_container,subread_container,samtools_container,container_dir" 
+
+
+
+------------------------------------------------------
+                                        ,--./,-.
+        ___     __   __   __   ___     /,-._.--~'
+  |\ | |__  __ /  ` /  \ |__) |__         }  {
+  | \| |       \__, \__/ |  \ |___     \`-._,-`-,
+                                        `._,._,'
+  nf-core/seeker v3.1.0
+------------------------------------------------------
+Core Nextflow options
+  runName             : marvelous_elion
+  containerEngine     : singularity
+  launchDir           : /data/gpfs/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0
+  workDir             : /data/projects/punim2394/curioseeker_v3.1.0/temp_3
+  projectDir          : /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0
+  userName            : czhu3869
+  profile             : singularity
+  configFiles         : /data/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/nextflow.config, /data/gpfs/projects/punim2394/curioseeker_v3.1.0/seeker-v3.1.0/nextflow.config, /data/projects/punim2394/curioseeker_v3.1.0/Bioinfo_Seeker_example_slurm.config
+
+Input/output options
+  input               : /data/projects/punim2394/curioseeker_v3.1.0/files_HKX31_covid.csv
+  outdir              : /data/projects/punim2394/curioseeker_v3.1.0/result_day4_10_covid
+
+Seeker Parameter Options
+  barcode_chunk_size  : 100000
+
+Reference genome options
+  igenomes_base       : /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference
+
+Cleanup Temporary Working Files
+  run_file_cleanup    : false
+
+AWS Omics Variables
+  omics_results_dir   : null
+
+Generic options
+  validate_params     : true
+
+Other parameters
+  supply_sjdb_gtf_file: true
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+------------------------------------------------------
+If you use nf-core/seeker for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+* Software dependencies
+  https://github.com/nf-core/seeker/blob/master/CITATIONS.md
+------------------------------------------------------
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:STA... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ SECONDARY_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_2_S3_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_3_S4_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_2_S1_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_3_S2_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_2_S3_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_3_S4_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_2_S1_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_3_S2_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ SECONDARY_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_2_S3_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_3_S4_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_2_S1_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_3_S2_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_2_S3_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_3_S4_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_2_S1_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_3_S2_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+executor >  slurm (6)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ SECONDARY_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_2_S3_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_3_S4_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_2_S1_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_3_S2_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_2_S3_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_3_S4_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_2_S1_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_3_S2_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+executor >  slurm (8)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ SECONDARY_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ SECONDARY_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_2_S3_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_3_S4_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_2_S1_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt]]
+
+
+[ READ1_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_3_S2_R1_001.fastq.gz, /data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_2_S3_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST2_3_S4_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_2_S1_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+[ READ2_INPUTS ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/fastq/LST4_3_S2_R2_001.fastq.gz, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex]]
+
+
+executor >  slurm (8)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (8)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (8)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (8)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (8)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (8)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (8)
+[92/c7b07a] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/92/c7b07a0c2625dfa6a56e1fe5fa0b3f/lungST_4.3-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/92/c7b07a0c2625dfa6a56e1fe5fa0b3f/lungST_4.3-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt]
+
+
+executor >  slurm (9)
+[92/c7b07a] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[25/631adb] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/92/c7b07a0c2625dfa6a56e1fe5fa0b3f/lungST_4.3-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/92/c7b07a0c2625dfa6a56e1fe5fa0b3f/lungST_4.3-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt]
+
+
+executor >  slurm (9)
+[92/c7b07a] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[25/631adb] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/92/c7b07a0c2625dfa6a56e1fe5fa0b3f/lungST_4.3-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/92/c7b07a0c2625dfa6a56e1fe5fa0b3f/lungST_4.3-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt]
+
+
+executor >  slurm (9)
+[cb/7ab189] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[25/631adb] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/cb/7ab1892632353c250867b253ce8cd2/lungST_2.3-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/cb/7ab1892632353c250867b253ce8cd2/lungST_2.3-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt]
+
+
+
+
+
+executor >  slurm (10)
+[cb/7ab189] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[78/9e4997] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/cb/7ab1892632353c250867b253ce8cd2/lungST_2.3-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/cb/7ab1892632353c250867b253ce8cd2/lungST_2.3-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt]
+
+
+
+
+
+executor >  slurm (10)
+[cb/7ab189] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[78/9e4997] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[74/59754d] process > NF:SEEKER:PRIMARY_READ2:STA... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/cb/7ab1892632353c250867b253ce8cd2/lungST_2.3-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/cb/7ab1892632353c250867b253ce8cd2/lungST_2.3-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt]
+
+
+executor >  slurm (10)
+[cb/7ab189] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[78/9e4997] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[74/59754d] process > NF:SEEKER:PRIMARY_READ2:STA... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (10)
+[cb/7ab189] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[78/9e4997] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[43/c0fc29] process > NF:SEEKER:PRIMARY_READ2:STA... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (11)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[67/c90349] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 3
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[43/c0fc29] process > NF:SEEKER:PRIMARY_READ2:STA... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/be/0972c8edf58e004e40d5f832fbee4f/lungST_4.2-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/be/0972c8edf58e004e40d5f832fbee4f/lungST_4.2-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt]
+
+
+executor >  slurm (11)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[67/c90349] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 3
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[43/c0fc29] process > NF:SEEKER:PRIMARY_READ2:STA... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/be/0972c8edf58e004e40d5f832fbee4f/lungST_4.2-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/be/0972c8edf58e004e40d5f832fbee4f/lungST_4.2-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt]
+
+
+executor >  slurm (12)
+[be/0972c8] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[25/631adb] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 33%] 1 of 3
+[0f/36890f] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[43/c0fc29] process > NF:SEEKER:PRIMARY_READ2:STA... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (13)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[0f/36890f] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[43/c0fc29] process > NF:SEEKER:PRIMARY_READ2:STA... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/47/bbf10a0a0b456ea72883b9aff4b88d/lungST_2.2-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/47/bbf10a0a0b456ea72883b9aff4b88d/lungST_2.2-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt]
+
+
+executor >  slurm (13)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[0f/36890f] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[43/c0fc29] process > NF:SEEKER:PRIMARY_READ2:STA... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ BARCODE_MATCHING_INPUT ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/47/bbf10a0a0b456ea72883b9aff4b88d/lungST_2.2-r1-cellular-barcodes-top-bb, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/47/bbf10a0a0b456ea72883b9aff4b88d/lungST_2.2-r1-unique-cellular-barcodes, /data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt]
+
+
+executor >  slurm (14)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[78/9e4997] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[43/c0fc29] process > NF:SEEKER:PRIMARY_READ2:STA... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (14)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[78/9e4997] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[43/c0fc29] process > NF:SEEKER:PRIMARY_READ2:STA... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (14)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[78/9e4997] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (15)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[67/c90349] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[31/571dc8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 3
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (15)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[67/c90349] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[31/571dc8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 3
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (15)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[31/571dc8] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (16)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (16)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[99/f29a93] process > NF:SEEKER:PRIMARY_READ2:STA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SUB... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (18)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[d2/791fbc] process > NF:SEEKER:PRIMARY_READ2:SUB... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/74/59754d769362a5cf2f0f0448039a99/lungST_2.3.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/43/c0fc2924286b46435b220402b6c04e/lungST_4.2.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/99/f29a93e0eb3b7565919400884579d2/lungST_4.3.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/c5/33e94b69d9915a23e36dbc6ec3e2e2/lungST_2.2.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+executor >  slurm (20)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[63/b61b44] process > NF:SEEKER:PRIMARY_READ2:SUB... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/74/59754d769362a5cf2f0f0448039a99/lungST_2.3.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/43/c0fc2924286b46435b220402b6c04e/lungST_4.2.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/99/f29a93e0eb3b7565919400884579d2/lungST_4.3.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/c5/33e94b69d9915a23e36dbc6ec3e2e2/lungST_2.2.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+executor >  slurm (20)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[63/b61b44] process > NF:SEEKER:PRIMARY_READ2:SUB... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/74/59754d769362a5cf2f0f0448039a99/lungST_2.3.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/43/c0fc2924286b46435b220402b6c04e/lungST_4.2.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/99/f29a93e0eb3b7565919400884579d2/lungST_4.3.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+[ FEATURE_COUNTS_INPUT ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/curioseeker_v3.1.0/temp_3/c5/33e94b69d9915a23e36dbc6ec3e2e2/lungST_2.2.SortedByCoordinate.bam, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf]]
+
+
+executor >  slurm (20)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[d2/791fbc] process > NF:SEEKER:PRIMARY_READ2:SUB... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (21)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[d2/791fbc] process > NF:SEEKER:PRIMARY_READ2:SUB... [ 25%] 1 of 4
+[e4/72de03] process > NF:SEEKER:PRIMARY_READ2:SAM... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (21)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[d2/791fbc] process > NF:SEEKER:PRIMARY_READ2:SUB... [ 25%] 1 of 4
+[e4/72de03] process > NF:SEEKER:PRIMARY_READ2:SAM... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (22)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[63/b61b44] process > NF:SEEKER:PRIMARY_READ2:SUB... [ 50%] 2 of 4
+[8f/3f7cc1] process > NF:SEEKER:PRIMARY_READ2:SAM... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (24)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (24)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SAM... -
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (25)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[e4/72de03] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 25%] 1 of 4
+[cf/b271fc] process > NF:SEEKER:PRIMARY_READ2:SAM... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (25)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[e4/72de03] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 25%] 1 of 4
+[cf/b271fc] process > NF:SEEKER:PRIMARY_READ2:SAM... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (25)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ1:SEE... -
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[e4/72de03] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 25%] 1 of 4
+[cf/b271fc] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 1 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (26)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[e4/72de03] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 25%] 1 of 4
+[cf/b271fc] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 1 of 1
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ1_DB ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/fa/f3d0deef70a58535d00e7700a68806/lungST_2.3-r1-db]
+
+
+executor >  slurm (27)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[8f/3f7cc1] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 50%] 2 of 4
+[0b/435ffa] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 50%] 1 of 2
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ1_DB ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/fa/f3d0deef70a58535d00e7700a68806/lungST_2.3-r1-db]
+
+
+executor >  slurm (28)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[d8/ea0a15] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 75%] 3 of 4
+[72/c6c9c1] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 33%] 1 of 3
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ1_DB ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/fa/f3d0deef70a58535d00e7700a68806/lungST_2.3-r1-db]
+
+
+executor >  slurm (29)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (29)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [  0%] 0 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (29)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 1 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (29)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 1 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (29)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 1 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[72/c6c9c1] process > NF:SEEKER:PRIMARY_READ2:SAM... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (29)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 1 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (33)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 1 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (33)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[fa/f3d0de] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 25%] 1 of 4
+[bc/756398] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 1 of 1
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (34)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[0f/36890f] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[eb/ebeb65] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 1 of 2
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ1_DB ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/0f/36890f916b726f963af7048aeec991/lungST_4.3-r1-db]
+
+
+executor >  slurm (34)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[0f/36890f] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[eb/ebeb65] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 1 of 2
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (34)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[0f/36890f] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 50%] 2 of 4
+[eb/ebeb65] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 2 of 2
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (35)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[31/571dc8] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[6e/bc065a] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 66%] 2 of 3
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ1_DB ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/31/571dc8f84130e9ca5127beaaf28412/lungST_4.2-r1-db]
+
+
+executor >  slurm (35)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[31/571dc8] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[6e/bc065a] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 66%] 2 of 3
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ1_DB ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/31/571dc8f84130e9ca5127beaaf28412/lungST_4.2-r1-db]
+
+
+executor >  slurm (35)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[31/571dc8] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[6e/bc065a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 3 of 3
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (35)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[31/571dc8] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[6e/bc065a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 3 of 3
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[74/92f750] process > NF:SEEKER:PRIMARY_READ2:SEE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ2_DB ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/74/92f750044e736747041a389636feec/lungST_2.2-r2-db]
+
+
+executor >  slurm (35)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[31/571dc8] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[6e/bc065a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 3 of 3
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[74/92f750] process > NF:SEEKER:PRIMARY_READ2:SEE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (36)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[74/92f750] process > NF:SEEKER:PRIMARY_READ2:SEE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ1_DB ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/ff/279773c10db6c945ae41bfe53a2c40/lungST_2.2-r1-db]
+
+
+executor >  slurm (36)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [ 75%] 3 of 4
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[74/92f750] process > NF:SEEKER:PRIMARY_READ2:SEE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ1_DB ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/ff/279773c10db6c945ae41bfe53a2c40/lungST_2.2-r1-db]
+
+
+executor >  slurm (36)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[74/92f750] process > NF:SEEKER:PRIMARY_READ2:SEE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (36)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[ce/b49f8d] process > NF:SEEKER:PRIMARY_READ2:SEE... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ2_DB ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/ce/b49f8d669f653656c381b63666313a/lungST_2.3-r2-db]
+
+
+executor >  slurm (36)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[bb/52c3fd] process > NF:SEEKER:PRIMARY_READ2:SEE... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ2_DB ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/bb/52c3fd19dee523f719bbdbd607f740/lungST_4.3-r2-db]
+
+
+
+
+
+executor >  slurm (40)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ READ2_DB ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], /data/projects/punim2394/curioseeker_v3.1.0/temp_3/73/1c3c41a3321bf00617aef149cc4682/lungST_4.2-r2-db]
+
+
+
+
+
+executor >  slurm (40)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+
+
+
+executor >  slurm (40)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+executor >  slurm (40)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (40)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_REA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (41)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[a0/a08fd3] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[b6/961764] process > NF:SEEKER:SECONDARY:SEC_REA... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (41)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[a0/a08fd3] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[b6/961764] process > NF:SEEKER:SECONDARY:SEC_REA... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (41)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[a0/a08fd3] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 25%] 1 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[b6/961764] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 1 of 1
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (42)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[eb/930a19] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[38/4969fc] process > NF:SEEKER:SECONDARY:SEC_REA... [ 50%] 1 of 2
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (42)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[eb/930a19] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[38/4969fc] process > NF:SEEKER:SECONDARY:SEC_REA... [ 50%] 1 of 2
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (42)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[eb/930a19] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[38/4969fc] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 2 of 2
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (43)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[ae/d51af4] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[05/472494] process > NF:SEEKER:SECONDARY:SEC_REA... [ 66%] 2 of 3
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (43)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[ae/d51af4] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[05/472494] process > NF:SEEKER:SECONDARY:SEC_REA... [ 66%] 2 of 3
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (43)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[ae/d51af4] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:PRIMARY_JOINED:SE... -
+[05/472494] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 3 of 3
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (45)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/e234ff] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[42/7b066f] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[42/7b066f] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [ 75%] 3 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[42/7b066f] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[42/7b066f] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[42/7b066f] process > NF:SEEKER:PRIMARY_JOINED:SE... [  0%] 0 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/e234ff] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 25%] 1 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/e234ff] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 25%] 1 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[e9/c5dc21] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 50%] 2 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[42/7b066f] process > NF:SEEKER:PRIMARY_JOINED:SE... [ 75%] 3 of 4
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (48)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_FOR... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/9f/fe40d4ff5f84d681e5a49fe730daac/lungST_2.2-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/38/4969fc823f565bc92767aae3fb24e9/lungST_2.2.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/e9/c5dc218f7b8c9da9f4c96af4cab23e/lungST_2.3-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/44/71d93a98c8e95d1e20766e44f306b1/lungST_2.3.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/42/7b066fa91f8d9a14e9844eed215de6/lungST_4.2-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/b6/96176425bc2de4d000294dadc6d5a5/lungST_4.2.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/44/e234ffdf5c2eb89d536bc4de051557/lungST_4.3-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/05/47249496f36842a12bb0b39d87f5f1/lungST_4.3.numReads_perBM]]
+
+
+executor >  slurm (52)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/9f/fe40d4ff5f84d681e5a49fe730daac/lungST_2.2-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/38/4969fc823f565bc92767aae3fb24e9/lungST_2.2.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/e9/c5dc218f7b8c9da9f4c96af4cab23e/lungST_2.3-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/44/71d93a98c8e95d1e20766e44f306b1/lungST_2.3.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/42/7b066fa91f8d9a14e9844eed215de6/lungST_4.2-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/b6/96176425bc2de4d000294dadc6d5a5/lungST_4.2.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/44/e234ffdf5c2eb89d536bc4de051557/lungST_4.3-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/05/47249496f36842a12bb0b39d87f5f1/lungST_4.3.numReads_perBM]]
+
+
+executor >  slurm (52)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_ANA... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_2.2, sample:lungST_2.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_063_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/9f/fe40d4ff5f84d681e5a49fe730daac/lungST_2.2-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/38/4969fc823f565bc92767aae3fb24e9/lungST_2.2.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_2.3, sample:lungST_2.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_067_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/e9/c5dc218f7b8c9da9f4c96af4cab23e/lungST_2.3-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/44/71d93a98c8e95d1e20766e44f306b1/lungST_2.3.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_4.2, sample:lungST_4.2, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_061_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/42/7b066fa91f8d9a14e9844eed215de6/lungST_4.2-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/b6/96176425bc2de4d000294dadc6d5a5/lungST_4.2.numReads_perBM]]
+
+
+[ COUNTS: FORMAT_CLEANUP_INPUT ]: [[id:lungST_4.3, sample:lungST_4.3, experiment_date:Aug-24, barcode_file:/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, single_end:false, genome:GRCm38_covid19, gtf:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes/genes.gtf, star_index:/data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Sequence/STARIndex, report:b], [/data/projects/punim2394/lung_curio/barcodes/A0090_062_BeadBarcodes.txt, /data/projects/punim2394/Virus_ref_genome/generate_seeker_reference/GRCm38_covid19/Annotation/Genes, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/44/e234ffdf5c2eb89d536bc4de051557/lungST_4.3-wide-cell-counts, /data/projects/punim2394/curioseeker_v3.1.0/temp_3/05/47249496f36842a12bb0b39d87f5f1/lungST_4.3.numReads_perBM]]
+
+
+executor >  slurm (53)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[1b/3a9e76] process > NF:SEEKER:SECONDARY:SEC_FOR... [ 25%] 1 of 4
+[98/c94ffe] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (53)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[1b/3a9e76] process > NF:SEEKER:SECONDARY:SEC_FOR... [ 25%] 1 of 4
+[98/c94ffe] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+
+
+
+
+
+
+
+
+
+
+
+
+executor >  slurm (53)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[1b/3a9e76] process > NF:SEEKER:SECONDARY:SEC_FOR... [ 25%] 1 of 4
+[98/c94ffe] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 1
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (54)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[97/c8bf8d] process > NF:SEEKER:SECONDARY:SEC_FOR... [ 50%] 2 of 4
+[4b/f83aec] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 2
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (55)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[b1/1e97f4] process > NF:SEEKER:SECONDARY:SEC_FOR... [ 75%] 3 of 4
+[90/df86ce] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 3
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (55)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[b1/1e97f4] process > NF:SEEKER:SECONDARY:SEC_FOR... [ 75%] 3 of 4
+[90/df86ce] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 3
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (57)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 4
+[a5/017261] process > NF:SEEKER:SECONDARY:SEC_GEN... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [  0%] 0 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 4
+[49/c38c2b] process > NF:SEEKER:SECONDARY:SEC_GEN... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 4
+[49/c38c2b] process > NF:SEEKER:SECONDARY:SEC_GEN... [ 50%] 2 of 4
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [  0%] 0 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[98/c94ffe] process > NF:SEEKER:SECONDARY:SEC_ANA... [ 25%] 1 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[4b/f83aec] process > NF:SEEKER:SECONDARY:SEC_ANA... [ 50%] 2 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[4b/f83aec] process > NF:SEEKER:SECONDARY:SEC_ANA... [ 50%] 2 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[4b/f83aec] process > NF:SEEKER:SECONDARY:SEC_ANA... [ 50%] 2 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (60)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[90/df86ce] process > NF:SEEKER:SECONDARY:SEC_ANA... [ 75%] 3 of 4
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[-        ] process > NF:SEEKER:SECONDARY:SEC_GEN... -
+
+executor >  slurm (64)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [100%] 4 of 4 ✔
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[39/5cccf8] process > NF:SEEKER:SECONDARY:SEC_GEN... [  0%] 0 of 4
+
+executor >  slurm (64)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [100%] 4 of 4 ✔
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[39/5cccf8] process > NF:SEEKER:SECONDARY:SEC_GEN... [  0%] 0 of 4
+
+executor >  slurm (64)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [100%] 4 of 4 ✔
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[39/5cccf8] process > NF:SEEKER:SECONDARY:SEC_GEN... [ 25%] 1 of 4
+
+executor >  slurm (64)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [100%] 4 of 4 ✔
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[e6/7db853] process > NF:SEEKER:SECONDARY:SEC_GEN... [ 75%] 3 of 4
+
+executor >  slurm (64)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [100%] 4 of 4 ✔
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[eb/4deaed] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+
+executor >  slurm (64)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [100%] 4 of 4 ✔
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[eb/4deaed] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+-[nf-core/seeker] Pipeline completed successfully-
+
+executor >  slurm (64)
+[47/bbf10a] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[5d/89d1b0] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[ff/279773] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[94/b42b34] process > NF:SEEKER:PRIMARY_READ1:SEE... [100%] 4 of 4 ✔
+[c5/33e94b] process > NF:SEEKER:PRIMARY_READ2:STA... [100%] 4 of 4 ✔
+[51/d62cd2] process > NF:SEEKER:PRIMARY_READ2:SUB... [100%] 4 of 4 ✔
+[c8/465738] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[11/17db52] process > NF:SEEKER:PRIMARY_READ2:SAM... [100%] 4 of 4 ✔
+[73/1c3c41] process > NF:SEEKER:PRIMARY_READ2:SEE... [100%] 4 of 4 ✔
+[fb/0f6927] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[9f/fe40d4] process > NF:SEEKER:PRIMARY_JOINED:SE... [100%] 4 of 4 ✔
+[44/71d93a] process > NF:SEEKER:SECONDARY:SEC_REA... [100%] 4 of 4 ✔
+[2f/116c7e] process > NF:SEEKER:SECONDARY:SEC_FOR... [100%] 4 of 4 ✔
+[ef/1f06eb] process > NF:SEEKER:SECONDARY:SEC_ANA... [100%] 4 of 4 ✔
+[83/82e171] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+[eb/4deaed] process > NF:SEEKER:SECONDARY:SEC_GEN... [100%] 4 of 4 ✔
+-[nf-core/seeker] Pipeline completed successfully-
+WARN: Graphviz is required to render the execution DAG in the given format -- See http://www.graphviz.org for more info.
+Completed at: 19-Dec-2025 18:56:26
+Duration    : 5h 38m 49s
+CPU hours   : 93.8
+Succeeded   : 64
+
+
+Job ID           : 19891965
+Cluster          : spartan
+User/Project     : czhu3869/punim2394
+Nodes            : 1
+Wall-clock time  : 05:39:04 / 31-00:00:00
+
+Displaying overall resources usage from 2025-12-19 13:17:26 to 2025-12-19 18:56:30:
+
+NODE            CPU#        TOT%   ( USR   / SYS   / WIO   / IDLE  ) 
+
+spartan-bm031 : 
+                CPU# 1    : 0.2    (   0.1 /   0.1 /   0.0 /  99.8 ) 
+                CPU# 2    : 0.3    (   0.1 /   0.2 /   0.0 /  99.7 ) 
+                CPU# 3    : 0.2    (   0.1 /   0.1 /   0.0 /  99.8 ) 
+                CPU# 4    : 0.2    (   0.1 /   0.1 /   0.0 /  99.8 ) 
+                CPU# 5    : 0.5    (   0.1 /   0.4 /   0.0 /  99.5 ) 
+                CPU# 6    : 0.3    (   0.1 /   0.2 /   0.0 /  99.7 ) 
+                CPU# 7    : 0.4    (   0.1 /   0.3 /   0.0 /  99.6 ) 
+                CPU# 8    : 0.3    (   0.1 /   0.2 /   0.0 /  99.7 ) 
+
+
+Allocated CPUs            : 8    
+  CPUs with usage <25%    : 8    
+  CPUs with usage <50%    : 0    
+  CPUs with usage >50%    : 0    
+
+Memory used (RAM)         : 3.1%  [1652MB of 53688MB]
+
+--------------------------------------------
+

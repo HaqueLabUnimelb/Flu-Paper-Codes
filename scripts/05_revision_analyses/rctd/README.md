@@ -1,57 +1,44 @@
-# RCTD revision follow-up analyses
+# RCTD revision analyses
 
-These scripts evaluate whether the day-4 RCTD result is sensitive to full versus
-doublet mode and provide per-cell-type spatial maps.
+Does the day-4 RCTD result depend on the RCTD mode, and where is each cell type?
 
-## Recommended order
+## Order
 
-1. Generate the day-4 full-mode object with
-   `scripts/03_rctd/mouseDay4RCTD_full_v2.sh`.
-2. Submit `run_same_input_doublet.sh` to rerun that fitted object with
-   `doublet_mode = "doublet"`.
-3. Submit `compare_full_vs_doublet.sh` to calculate spot- and cell-type-level
-   agreement metrics and reviewer-facing plots.
-4. Submit `plot_individual_cell_types.sh` only when individual spatial
-   proportion maps are required.
+1. Fit day 4 in full mode: `scripts/03_rctd/mouseDay4RCTD_full_v2.sh`.
+2. `run_same_input_doublet.sh`: fits the same object again with `doublet_mode = "doublet"` (same beads,
+   reference and normalisation).
+3. `compare_full_vs_doublet.sh`: compares the two results.
+4. `plot_individual_cell_types.sh`: one map per cell type and replicate (independent of 2 and 3).
+5. `legacy/legacy_shared_spot_paired_ttest.sh`: compares the full-mode result with the earlier doublet-mode
+   result `Day4mouseRCTDoutmin30_editv1`.
 
-Create `logs/` before calling `sbatch`. The wrappers use the `long`
-partition for 31 days, one CPU and 16--32 GB RAM. They intentionally omit
-`--account`; supply an authorized account at submission time if required:
-
-```bash
-mkdir -p logs
-sbatch --account=YOUR_ACCOUNT scripts/05_revision_analyses/rctd/run_same_input_doublet.sh
-sbatch --account=YOUR_ACCOUNT scripts/05_revision_analyses/rctd/compare_full_vs_doublet.sh
-sbatch --account=YOUR_ACCOUNT scripts/05_revision_analyses/rctd/plot_individual_cell_types.sh
-```
+Submit from the root of the repository after `mkdir -p logs`, for example
+`sbatch --account=YOUR_ACCOUNT --partition=YOUR_PARTITION scripts/05_revision_analyses/rctd/run_same_input_doublet.sh`.
+The wrappers request one CPU, 16 to 32 GB (8 GB for the legacy comparison) and 31 days on `long`; override
+these on the command line. The doublet-mode fit takes about 4 hours on one CPU and about 3 GB of memory.
 
 ## Configuration
 
-The main variables are:
+- `FLU_RCTD_DAY4_FULL_RDS`: day-4 full-mode result (`RCTD.replicates` object);
+- `FLU_RCTD_DAY4_DOUBLET_RDS`: doublet-mode result of step 2;
+- `FLU_RCTD_DAY4_REPLICATE_NAMES`: replicate labels in object order (`puck1_lungST_2_2,puck2_lungST_2_3`);
+- `FLU_RCTD_MODE_COMPARISON_OUTPUT_DIR`, `FLU_RCTD_CELL_PLOT_OUTPUT_DIR`: output folders;
+- `FLU_RCTD_LEGACY_DOUBLET_RDS`, `FLU_RCTD_LEGACY_COMPARISON_OUTPUT_DIR`: for step 5.
 
-- `FLU_RCTD_DAY4_FULL_RDS`: day-4 full-mode `RCTD.replicates` object;
-- `FLU_RCTD_DAY4_DOUBLET_RDS`: same-input doublet-mode result;
-- `FLU_RCTD_DAY4_REPLICATE_NAMES`: comma-separated labels in object order;
-- `FLU_RCTD_MODE_COMPARISON_OUTPUT_DIR`: comparison tables and plots;
-- `FLU_RCTD_CELL_PLOT_OUTPUT_DIR`: per-cell-type maps.
+Defaults are folders under `outputs/` in the repository.
 
-Defaults are repository-relative under `outputs/`.
+## What the comparison computes
 
-## Comparison outputs
+Bead classes of the doublet-mode fit; for the beads it does not reject: agreement of the first cell type,
+the share of the full-mode weight in the two cell types of the doublet call, per-cell-type Pearson and
+Spearman correlations, mean absolute and root mean square differences, total variation distance and
+Jensen-Shannon divergence per bead, and mean compositions. Six summary plots, the tables and
+`reviewer_summary.md` are written. Neighbouring beads are not independent, so these numbers describe agreement
+between the two modes; they are not tests between mice.
 
-The same-input comparison writes per-replicate and per-cell-type metrics,
-spot-class counts, spot-level agreement, mean composition tables, six PNG
-summaries and `reviewer_summary.md`. Doublet-mode reject spots are excluded
-from proportion agreement metrics. The primary summaries are top-cell-type
-concordance, full-mode mass in the top two cell types, correlations, mean
-absolute error, total variation distance and Jensen-Shannon divergence.
+## Comparison with the earlier result
 
-Spot-level observations are spatially autocorrelated. These metrics describe
-agreement between modes and are not a substitute for biological-replicate
-inference.
-
-## Legacy analysis
-
-The [legacy directory](legacy/README.md) contains an earlier shared-spot paired
-t-test analysis for provenance. It is not the recommended mode-sensitivity
-analysis.
+The earlier doublet-mode result was fitted with `UMI_min = 75` and holds 16,292 and 14,421 beads, all of them
+also in the full-mode result. `legacy_shared_spot_paired_ttest.R` compares the two results on the beads that the
+doublet fit does not reject (9,983 and 8,977 beads), with a paired t-test per cell type. Because input and settings differ, a difference
+cannot be assigned to the mode alone; step 3 compares the modes on the same input.

@@ -28,17 +28,14 @@ outputs/
 work/
 .nextflow/
 .nextflow.log*
-figures/generated/*
-!figures/generated/.gitkeep
-!figures/generated/feature_plots/
-!figures/generated/feature_plots/*.jpeg
-!figures/generated/viral_transcript_mapping/
-!figures/generated/viral_transcript_mapping/*.png
 
 # Logs and temporary files
 logs/*
 !logs/validation_summary.txt
 *.log
+!original_scripts/**/*.log
+slurm-*.out
+!original_scripts/**/slurm-*.out
 *.tmp
 *.temp
 *~
@@ -48,3 +45,7 @@ logs/*
 .RData
 .Rproj.user/
 .DS_Store
+
+# Local software environment and R graphics output
+environment/rctd_spacexr_2.2/
+Rplots.pdf

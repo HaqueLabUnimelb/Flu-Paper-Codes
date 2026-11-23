@@ -1,25 +1,16 @@
-# Archived figures
+# Output figures and tables
 
-This directory contains 44 existing image outputs copied without modification.
-The 42 JPEG feature-plot outputs have filenames and original output directories
-that match explicit `ggsave()` calls in
-`scripts/02_feature_plots/FeaturePlots_Flu.R`:
+`generated/` holds 107 files written by the original runs, copied without change. Script, original location,
+date, size and SHA-256 of each file: [`../docs/FIGURE_MANIFEST.tsv`](../docs/FIGURE_MANIFEST.tsv); checksums
+also in [`SHA256SUMS`](SHA256SUMS) (`sha256sum -c figures/SHA256SUMS` from the root of the repository).
 
-- 4 spatial `nFeature_RNA` QC plots;
-- 27 explicitly saved cytokine-gene feature plots;
-- 11 explicitly saved B-cell-associated gene feature plots.
+| Folder | Files | Content | Script |
+|---|---:|---|---|
+| `generated/feature_plots/` | 42 | detected genes per bead (`mouse*_umis.jpeg`), cytokine genes and B-cell genes on the tissue | `FeaturePlots_Flu_2026-07-01.R` |
+| `generated/violin_plots/` | 7 | expression of seven cytokine genes per sample | `FeaturePlots_Flu.R` |
+| `generated/feature_plots_v2/` | 27 | the seven cytokine genes on the tissue, beads without counts in grey | `FeaturePlots_Flu.R` |
+| `generated/viral_transcript_mapping/` | 4 | PR8 counts per bead on the tissue, one map per sample | `assess_pr8_viral_expression.R` |
+| `generated/viral_expression/` | 27 | PR8 signal per cell type, its spatial pattern and its distribution: plots, the tables behind them and the notes written by the scripts | scripts of `original_scripts/06_viral_expression/` |
 
-The remaining two files are 2400 × 2100 RGB PNG outputs identified by the
-authors as PR8 viral transcript mapping figures. The plotting source script was
-not supplied, so their provenance is author-supplied rather than code-verified.
-
-The JPEG files are stored in `generated/feature_plots/`, and the PNG files are
-stored in `generated/viral_transcript_mapping/`. Together the 44 files occupy
-28,387,196 bytes; the largest file is 3,172,863 bytes. Individual sizes and
-SHA-256 checksums are recorded in `docs/FIGURE_MANIFEST.tsv` and
-`figures/SHA256SUMS`.
-
-No manuscript panel numbers were present in the scripts, so manuscript mappings
-remain unresolved. The images were archived based on technical provenance and
-the authors' stated section assignment only; no biological interpretation was
-performed.
+Samples: mouse1 = lungST_2.2 and mouse2 = lungST_2.3 (day 4); mouse4 = lungST_4.2 and mouse5 = lungST_4.3
+(day 10).

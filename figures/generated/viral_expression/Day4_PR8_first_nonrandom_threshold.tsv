@@ -1,0 +1,3 @@
+sample_id	first_significant_threshold_raw_umi	first_significant_threshold_log1p	positive_spots_at_threshold	positive_percent_at_threshold	experimentwise_p
+2_2	1	0.693147180559945	23804	75.1721088865029	0.001
+2_3	1	0.693147180559945	21250	73.1421884142774	0.001

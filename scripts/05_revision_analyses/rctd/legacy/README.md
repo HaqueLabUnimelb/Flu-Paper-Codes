@@ -1,13 +1,9 @@
-# Legacy shared-spot comparison
+# Comparison with the earlier doublet-mode result
 
-This directory preserves an exploratory paired t-test comparison between an old
-doublet-mode object and a newer full-mode object.
-
-The objects were not generated from identical spot sets or preprocessing, so
-their differences cannot be attributed solely to RCTD mode. In addition,
-spatial spots are autocorrelated and only two pucks are available; spot-level
-p-values must not be interpreted as biological-replicate evidence.
-
-Use the same-input workflow in the parent directory as the primary comparison.
-The legacy script and wrapper are retained only for transparent provenance.
-No legacy result CSV files are distributed in this repository.
+`legacy_shared_spot_paired_ttest.R` compares the day-4 full-mode result with the earlier doublet-mode result
+`Day4mouseRCTDoutmin30_editv1` (doublet mode, `UMI_min = 75`, 16,292 and 14,421 beads) on the beads that its fit
+does not reject:
+proportions of every cell type in both results and a paired t-test per cell type. Because input and settings
+differ, a difference cannot be assigned to the mode alone; [`../compare_full_vs_doublet.R`](../compare_full_vs_doublet.R)
+compares the modes on the same input. Original run: SLURM job 28266050, 29 July 2026
+([`../../../../original_scripts/05_revision_analyses/rctd/`](../../../../original_scripts/05_revision_analyses/rctd)).
